@@ -8,3 +8,5 @@ dist/
 # Unit test reports
 TEST*.xml    
 
+
+/test
