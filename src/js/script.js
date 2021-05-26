@@ -1,7 +1,82 @@
+function isValidForm(form) {
+    isValid = true;
 
+    form.forEach(function (input) {
+        var value = $(input.name).val();
+        input.validators.forEach(function (validator) {
+            switch (validator) {
+                case 'required':
+                    if (value === '') {
+                        isValid = false;
+                    }
+                    break;
+                case 'isNumber':
+                    if (REX_IS_NUMBER.test(value) === false) {
+                        isValid = false;
+                    }
+                    break;
+                case 'min':
+                    if (+value < input.min) {
+                        isValid = false;
+                    }
+                    break;
+                case 'max':
+                    if (+value > input.max) {
+                        isValid = false;
+                    }
+                    break;
+                case 'minLength':
+                    if (value.length < input.minLength) {
+                        isValid = false;
+                    }
+                    break;
+                case 'maxLength':
+                    if (value.length > input.maxLength) {
+                        isValid = false;
+                    }
+                    break;
+                case 'email':
+                    if (REX_EMAIL.test(value) === false) {
+                        isValid = false;
+                    }
+                    break;
+            }
+        });
+    });
+
+    return isValid;
+}
+function validateForm($submit, form) {
+
+    function updateView() {
+        $($submit).attr("disabled", !isValidForm(form));
+    }
+
+    var arrElement = [];
+    form.forEach(function (element) {
+        arrElement.push(element.name);
+    });
+
+    $(arrElement.join(",")).on("change keyup", function () {
+        updateView();
+    });
+    updateView();
+}
 $(window).on("load", function () {
+
+    var REX_IS_NUMBER = new RegExp('^[0-9]*$');
+    var REX_LOWERCASE = new RegExp('(?=.*[a-z])');
+    var REX_UPPERCASE = new RegExp('(?=.*[A-Z])');
+    var REX_NUMBER = new RegExp('(?=.*[0-9])');
+    var REX_SPECIAL = new RegExp('(?=.[!@#\$%\^&])');
+    var REX_INTERGER = new RegExp('^[0-9]*$');
+    var REX_PHONE = new RegExp('^(0|84)[0-9]*$');
+    var REX_EMAIL = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+    var REX_URL = new RegExp(/^(?:(?:https?|ftp):\/\/)(?:\S+(?::\S*)?@)?(?:(?!10(?:\.\d{1,3}){3})(?!127(?:\.​\d{1,3}){3})(?!169\.254(?:\.\d{1,3}){2})(?!192\.168(?:\.\d{1,3}){2})(?!172\.(?:1[​6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1​,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00​a1-\uffff0-9]+-?)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]+-?)*[a-z\u​00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/[^\s]*)?$/i);
+
     new WOW().init();
     $('.loading').removeClass('active')
+    Menu()
 });
 
 $(window).on("scroll", function () {
@@ -12,90 +87,39 @@ $(window).on("resize", function () {
 
 });
 
-let videoAction = function () {
-    let player;
-    let idVideo = $('.video__play')[0] && $('.video__play')[0].attributes.video && $('.video__play')[0].attributes.video.value;
-
-    onYouTubeIframeAPIReady()
-    function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-            height: '390',
-            width: '640',
-            videoId: idVideo,
-            playerVars: {
-                color: 'white',
-                // controls: 0,
-                rel: 0,
-                enablejsapi: 1,
-                modestbranding: 1, showinfo: 0, ecver: 2
-            },
-            events: {
-                'onReady': onPause,
-                'onStateChange': onPlayerStateChange
-            }
-        });
-    }
-
-    function onPause(event) {
-        event.target.pauseVideo();
-    }
-
-    var done = false;
-    function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING && !done) {
-            done = true;
-        }
-    }
-
-    function playVideoActiveClass(status) {
-        if (status) {
-            $('.video__pause').addClass('inactive')
-            $('.video__play').addClass('active')
-            player.playVideo();
-        } else {
-            $('.video__pause').removeClass('inactive')
-            $('.video__play').removeClass('active')
-            player.stopVideo();
-        }
-
-    }
-
-    // play 
-    $('.video__pause .play-icon').click(function () {
-        playVideoActiveClass(true)
-    })
-
-    // trigger play 
-    $('#playVideoTrigger').click(function () {
-        playVideoActiveClass(true)
-    })
+let PopupValidateForm = function () {
+    var form = [{
+        name: '.PopupName',
+        validators: ['required']
+    }, {
+        name: '.PopupPhone',
+        validators: ['required', 'isNumber', 'minLength', 'maxLength'],
+        minLength: 10,
+        maxLength: 10,
+    }, {
+        name: '.PopupEmail',
+        validators: []
+    }, {
+        name: '.PopupNote',
+        validators: []
+    }]
+    var $submit = ".popup__button button";
+    validateForm($submit, form);
 }
 
-let sliderHome = function () {
-    if ($(".home-slider__wrap").length === 0) {
-        return false
-    }
+let Menu = function () {
+    $('.menu__nav-item a').click(function (e) {
+        e.preventDefault();
 
-    $(".home-slider__wrap").slick({
-        arrows: false,
-        dots: true,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true,
-    });
+        let link = $(this).attr('link')
 
-    let htmlTextLogo = $('.home-slider__footer').html()
+        $('.menu__nav-item a').removeClass('active');
+        $('.menu__nav-item a[link="' + link + '"]').addClass('active');
 
-    $(".home-slider__wrap").on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-        if (nextSlide == 1) {
-            $('.home-slider__footer .text').html('')
-        } else {
-            $('.home-slider__footer .text').html(htmlTextLogo)
+
+        if (link != '' && link != undefined) {
+            goToByScroll(link);
         }
-
-    });
+    })
 }
-
 

@@ -1,47 +1,51 @@
 /*use : @include {mixin-name}*/
-
-/*Circular*/
-@mixin Circular-Medium {
-	font-family: $CircularStd-Medium
+/*Cormorant*/
+@mixin Cormorant-Light {
+	font-family: $Cormorant;
+	font-weight: 300;
+}
+@mixin Cormorant-Regular {
+	font-family: $Cormorant;
+	font-weight: 400;
+}
+@mixin Cormorant-Medium {
+	font-family: $Cormorant;
+	font-weight: 500;
+}
+@mixin Cormorant-Semi-Bold {
+	font-family: $Cormorant;
+	font-weight: 600;
+}
+@mixin Cormorant-Bold {
+	font-family: $Cormorant;
+	font-weight: 700;
 }
 
-@mixin Circular-Book {
-	font-family: $CircularStd-Book
+/*Montserrat*/
+@mixin Montserrat-Regular {
+	font-family: $Montserrat;
+	font-weight: 400;
 }
-
-@mixin Circular-Bold {
-	font-family: $CircularStd-Bold
+@mixin Montserrat-Medium {
+	font-family: $Montserrat;
+	font-weight: 500;
 }
-
-@mixin Circular-Black {
-	font-family: $CircularStd-Black
+@mixin Montserrat-Semi-Bold {
+	font-family: $Montserrat;
+	font-weight: 600;
 }
-
-/*SVN-Gilroy*/
-@mixin SVN-Gilroy-Black {
-	font-family: $SVN-Gilroy-Black
+@mixin Montserrat-Bold {
+	font-family: $Montserrat;
+	font-weight: 700;
 }
-
-@mixin SVN-Gilroy-Bold {
-	font-family: $SVN-Gilroy-Bold
+@mixin Montserrat-Extra-Bold {
+	font-family: $Montserrat;
+	font-weight: 800;
 }
-
-@mixin SVN-Gilroy-Light {
-	font-family: $SVN-Gilroy-Light
+@mixin Montserrat-Extra-Black {
+	font-family: $Montserrat;
+	font-weight: 800;
 }
-
-@mixin SVN-Gilroy-Medium {
-	font-family: $SVN-Gilroy-Medium
-}
-
-@mixin SVN-Gilroy-Regular {
-	font-family: $SVN-Gilroy-Regular
-}
-
-@mixin SVN-Gilroy-SemiBold {
-	$SVN-Gilroy-SemiBold: "SVN-Gilroy-SemiBold";
-}
-
 
 /*transform*/
 @mixin transform($value) {
@@ -103,22 +107,22 @@
 @mixin placeholderInput {
 	&::-webkit-input-placeholder {
 		/* Chrome/Opera/Safari */
-		@include placeholderInputStyles
+		@include placeholderInputStyles;
 	}
 
 	&::-moz-placeholder {
 		/* Firefox 19+ */
-		@include placeholderInputStyles
+		@include placeholderInputStyles;
 	}
 
 	&:-ms-input-placeholder {
 		/* IE 10+ */
-		@include placeholderInputStyles
+		@include placeholderInputStyles;
 	}
 
 	&:-moz-placeholder {
 		/* Firefox 18- */
-		@include placeholderInputStyles
+		@include placeholderInputStyles;
 	}
 }
 
@@ -134,7 +138,6 @@
 	/* NEW - Chrome */
 	display: flex;
 }
-
 
 @mixin order($value) {
 	-webkit-box-ordinal-group: $value;
@@ -169,7 +172,7 @@
 	align-items: $value;
 }
 
-// flex-start | flex-end | center | space-between | space-around | stretch 
+// flex-start | flex-end | center | space-between | space-around | stretch
 @mixin align-content($value) {
 	-webkit-align-content: $value;
 	-moz-align-content: $value;
@@ -185,7 +188,7 @@
 	align-self: $value;
 }
 
-// flex-start | flex-end | center | space-between | space-around 
+// flex-start | flex-end | center | space-between | space-around
 @mixin justify-content($value) {
 	-webkit-justify-content: $value;
 	-moz-justify-content: $value;
@@ -210,7 +213,7 @@
 	flex-wrap: $value;
 }
 
-// flex_center 
+// flex_center
 @mixin flex_center() {
 	@include flexbox;
 	@include align-items(center);
