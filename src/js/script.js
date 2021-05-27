@@ -77,6 +77,8 @@ $(window).on("load", function () {
     new WOW().init();
     $('.loading').removeClass('active')
     Menu()
+    OpenMenu()
+    CloseMenu()
 });
 
 $(window).on("scroll", function () {
@@ -107,18 +109,48 @@ let PopupValidateForm = function () {
     validateForm($submit, form);
 }
 
+
+function goToByScroll(echo) {
+    $('html,body').animate({
+        scrollTop: $("#" + echo).offset().top,
+    }, 'slow');
+}
+
 let Menu = function () {
-    $('.menu__nav-item a').click(function (e) {
+    $('.menu__absolute a').click(function (e) {
         e.preventDefault();
 
         let link = $(this).attr('link')
 
-        $('.menu__nav-item a').removeClass('active');
-        $('.menu__nav-item a[link="' + link + '"]').addClass('active');
+        // $('.menu__absolute a').removeClass('active');
+        $('.menu__absolute a[link="' + link + '"]').addClass('active');
 
 
         if (link != '' && link != undefined) {
             goToByScroll(link);
+        }
+    })
+}
+
+let OpenMenu = function () {
+    $('.menu__text_toggle').click(function () {
+        if ($(this).hasClass('active')) {
+            $(this).removeClass('active')
+            $('.menu__absolute').removeClass('active')
+        } else {
+            $(this).addClass('active')
+            $('.menu__absolute').addClass('active')
+        }
+    })
+}
+
+let CloseMenu = function () {
+    $('.menu__toggle_close').click(function () {
+        $('.menu__text_toggle').removeClass('active')
+        if ($('.menu__absolute').hasClass('active')) {
+            $('.menu__absolute').removeClass('active')
+        } else {
+            $('.menu__absolute').addClass('active')
         }
     })
 }

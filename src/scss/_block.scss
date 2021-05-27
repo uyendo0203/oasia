@@ -1,0 +1,191 @@
+.block1 {
+    position: relative;
+    // height: 1020px;
+    &__bg {
+    }
+    &__right {
+        max-width: 570px;
+        position: absolute;
+        top: 190px;
+        right: 430px;
+    }
+    &__right--logo {
+        max-width: 350px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 25px;
+    }
+    &__right--text {
+        @include Cormorant-Regular;
+        font-size: 40px;
+        text-align: center;
+        color: #fff;
+        text-transform: uppercase;
+        span {
+            display: block;
+        }
+        &-1 {
+            line-height: normal;
+        }
+        &-2 {
+            line-height: 50px;
+        }
+        .number {
+            font-size: 100px;
+        }
+    }
+    .form {
+        top: 0;
+        left: 165px;
+        position: absolute;
+        padding: 20px 35px;
+        background-image: url(../assets/images/form-bg.png);
+        background-size: 100% 100%;
+        padding-top: 190px;
+        &__title {
+            @include Cormorant-Bold;
+            color: #fff;
+            text-transform: uppercase;
+            text-align: center;
+            line-height: normal;
+            span {
+                display: block;
+            }
+            .top {
+                font-size: 24px;
+            }
+            .bottom {
+                font-size: 35px;
+            }
+        }
+        &__des {
+            margin-top: 20px;
+        }
+    }
+}
+
+.block2 {
+    height: 1510px;
+    position: relative;
+    &__bg {
+    }
+    &__heading {
+        position: absolute;
+        max-width: 1215px;
+        top: 110px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+    }
+    &__heading--logo {
+        margin-right: 70px;
+        width: 275px;
+    }
+    &__heading--content {
+        flex: 1;
+        color: #2b2722;
+    }
+    &__heading--title {
+        @include Cormorant-Bold;
+        color: #2b2722;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: normal;
+        span {
+            display: block;
+        }
+        .top {
+            font-size: 24px;
+        }
+        .bottom {
+            font-size: 35px;
+        }
+    }
+    &__heading--des {
+    }
+    &__icon30 {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 30%;
+        left: 65%;
+        width: 515px;
+        &--top {
+            display: flex;
+            align-items: flex-end;
+            .text {
+                @include Cormorant-Bold;
+                color: #2b2722;
+                text-transform: uppercase;
+                font-size: 30px;
+            }
+        }
+        &--img {
+            width: 280px;
+        }
+        &--bottom {
+            @include Cormorant-Semi-Bold;
+            color: #2b2722;
+            text-transform: uppercase;
+            font-size: 30px;
+        }
+    }
+    &__summary {
+        position: absolute;
+        text-align: right;
+        left: 150px;
+        top: 80%;
+        max-width: 550px;
+        .button {
+            color: #2b2722;
+            margin-top: 25px;
+        }
+    }
+}
+.block3 {
+    height: 915px;
+    position: relative;
+}
+.block4 {
+    // height: 1100px;
+    position: relative;
+    &__bg {
+        margin-top: 14px;
+    }
+    &__wrap {
+        display: flex;
+        position: absolute;
+        top: 30px;
+        left: 50px;
+        width: 1655px;
+    }
+    &__left {
+        flex: 1;
+    }
+    &__right {
+        width: 515px;
+        margin-left: 40px;
+    }
+    &__logo {
+    }
+    &__title {
+    }
+    &__des {
+    }
+    &__img {
+    }
+}
+
+.block6 {
+    position: relative;
+    &__bg {
+        position: absolute;
+    }
+    &__wrap {
+        position: relative;
+        z-index: 1;
+        width: 1650px;
+        margin-left: 200px;
+        margin-right: 110px;
+    }
+}

@@ -2,50 +2,50 @@
 {% extends "../elements/_base.twig" %}
 
 {% block content %}
-    {# nhớ thêm active để show #}
+<div class="menu">
+    <a href="#" class="menu__logo">
+        <img src="../../assets/images/logo.png" alt="OASIA">
+    </a>
+    {# active #}
+    <div class="menu__text_toggle">
+        <span class="text">
+            menu
+        </span>
+        <div class="lines">
+            <span class="line line_1"></span>
+            <span class="line line_2"></span>
+            <span class="line line_3"></span>
+        </div>
+    </div>
+</div>
+<div class="menu__absolute">
+    <a link="" href="#" class="menu__toggle_close">X</a>
+    <a link="trangchu" href="#trangchu" class="active">Trang chủ</a>
+    <a link="gioithieu" href="#gioithieu">giới thiệu</a>
+    <a link="vitri" href="#vitri">vị trí</a>
+    <a link="tienich" href="#tienich">Tiện ích</a>
+    <a link="matbang" href="#matbang">mặt bằng</a>
+    <a link="sanpham" href="#sanpham">sản phẩm</a>
+    <a link="csbh" href="#csbh">csbh</a>
+    <a link="tintuc" href="#tintuc">tin tức</a>
+</div>
+{# nhớ thêm active để show #}
 <div class="message">
     <div class="message__content text-center">
         <div class="message__title">Bạn đã đăng ký tư vấn thành công.</div>
         <button class="btn-submit" type="button">Đóng</button>
     </div>
 </div>
-<div class="menu">
-    <a href="#" class="menu__logo">
-        <img src="./assets/images/logo.png" alt="verosa park">
-    </a>
-    <ul class="menu__nav">
-        <li class="menu__nav-item">
-            <a class="menu__nav-link active" link="trangchu" href="#trangchu">Trang chủ</a>
-        </li>
-        <li class="menu__nav-item">
-            <a class="menu__nav-link" link="tongquan" href="#tongquan">tổng quan</a>
-        </li>
-        <li class="menu__nav-item">
-            <a class="menu__nav-link" link="vitri" href="#vitri">vị trí</a>
-        </li>
-        <li class="menu__nav-item">
-            <a class="menu__nav-link" link="phaply" href="#phaply">pháp lý</a>
-        </li>
-        <li class="menu__nav-item">
-            <a class="menu__nav-link" link="tienich" href="#tienich">Tiện ích</a>
-        </li>
-        <li class="menu__nav-item">
-            <a class="menu__nav-link" link="csbh" href="#csbh">chính sách bán hàng</a>
-        </li>
-        <li class="menu__nav-item">
-            <a class="menu__nav-link" link="lienhe" href="#lienhe">liên hệ</a>
-        </li>
-    </ul>
-    <div class="hambuger">
-        <span class="bar bar1"></span>
-        <span class="bar bar2"></span>
-        <span class="bar bar3"></span>
-    </div>
-</div>
-</div>
 {# trangchu #}
 <section class="block1 trangchu" id="trangchu">
+    <figure class="block1__bg">
+        <img src="../../assets/images/v4_block1_bg.jpg" alt="">
+    </figure>
     <div class="form">
+        <div class="form__title">
+            <span class="top">nhận</span>
+            <span class="bottom">báo giá</span>
+        </div>
         <div class="form__content">
             <div class="form-group wow fadeInUp" data-wow-delay="0.2s">
                 <input
@@ -82,16 +82,157 @@
         </div>
         <div class="text-center wow fadeInUp" data-wow-delay="1.1s">
             <button class="form__submit button" type="submit" disabled>
-                <img src="./assets/images/button.png" alt="form__submit">
+                xem thêm
             </button>
         </div>
         <div class="form__des wow fadeInUp" data-wow-delay="1s">
-            <p>Dự án đã hoàn thiện, đang bàn giao</p>
-            <p>Pháp lý minh bạch, sổ đổ từng lô</p>
-            <p>Nhiều CSBH hấp dẫn</p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+        </div>
+    </div>
+    <div class="block1__right">
+        <div class="block1__right--logo">
+            <img src="../../assets/images/v4-block1-logo.png" alt="">
+        </div>
+        <div class="block1__right--text">
+            <span class="block1__right--text-1">
+                sống tận hưởng
+                <br>
+                giữa ốc đảo nghỉ dưỡng
+            </span>
+            <span class="block1__right--text-2">
+                <i class="number">5</i>
+                sao
+            </span>
         </div>
     </div>
 </section>
-<section class="block block2 tongquan" id="tongquan"></section>
-<section class="block block3"></section>
+<section class="block block2 tongquan" id="tongquan">
+    <figure class="block2__bg">
+        <img src="../../assets/images/block2_bg.jpg" alt="khoi ngoc dao xanh    ">
+    </figure>
+    <div class="block2__heading">
+        <div class="block2__heading--logo">
+            <img src="../../assets/images/v4-block1-logo.png" alt="">
+        </div>
+        <div class="block2__heading--content">
+            <div class="block2__heading--title">
+                <span class="top">khối ngọc</span>
+                <span class="bottom">đảo xanh</span>
+            </div>
+            <div class="block2__heading--des">
+                Thiết kế tổng thể và phong cách kiến trúc của The Oasia là kết tinh từ cảm hứng nghệ thuật Á Đông tinh tế cùng định vị BĐS đảo kết hợp phong cách nghỉ dưỡng siêu sang. Các phân khu tại The Oasia sở hữu tính cách riêng trong phối cảnh, kiến trúc mà vẫn duy trì nét hài hòa tổng thể khiến The Oasia sánh ngang một khối ngọc hiếm có với những mặt cắt hoàn hảo, đắt giá.
+            </div>
+        </div>
+    </div>
+    <div class="block2__icon30">
+        <div class="block2__icon30--top">
+            <figure class="block2__icon30--img">
+                <img src="../../assets/images/block2_number_leaf.png" alt="khoi ngoc dao xanh">
+            </figure>
+            <span class="text">tiện ích</span>
+        </div>
+        <span class="block2__icon30--bottom">phong cách thượng lưu</span>
+    </div>
+    <div class="block2__summary">
+        <div class="des">
+            Mỗi sáng thức giấc tại The Oasia sẽ là khởi đầu cho ngày đáng sống với vô vàn trải nghiệm có một không hai từ cảnh quan sông nước nhẹ nhàng, không khí trong lành, tinh khiết đến nghệ thuật kiến trúc hài hòa giữa sang trọng, tinh xảo cùng thanh khiết, giàu sự uốn lượn, linh hoạt.
+        </div>
+        <button class="form__submit button">
+            xem thêm
+        </button>
+    </div>
+</div>
+</section>
+<section class="block block3">
+    <figure class="block3__bg">
+        <img src="../../assets/images/block3_bg.png" alt="10 dac diem noi troi cua swanbay oasia">
+    </figure>
+</section>
+<section class="block block4">
+    <figure class="block4__bg">
+        <img src="../../assets/images/block4_bg.jpg" alt="nghe thuat thiet ke hai hoa va tinh xao">
+    </figure>
+    <div class="block4__wrap">
+        <figure class="block4__left">
+            <img src="../../assets/images/block4-map.png" alt="nghe thuat thiet ke hai hoa va tinh xao">
+        </figure>
+        <div class="block4__right">
+            <figure class="block4__logo">
+                <img src="../../assets/images/block4-icon-logo.png" alt="nghe thuat thiet ke hai hoa va tinh xao">
+            </figure>
+            <div class="block4__title">Nghệ thuật thiết kế hài hòa và tinh xảo</div>
+            <div class="block4__des">Phân khu SO đặc trưng bởi các đường nét bo tròn mềm mại, tinh xảo chạm đến đỉnh cao của nghệ thuật kiến trúc cùng sự kết nối hài hòa hai chiều giữa kiến trúc và cảnh quan, mang đến trải nghiệm sống tận hưởng liền mạch cho cư dân.</div>
+            <figure class="block4__img">
+                <img src="../../assets/images/block4-img.jpg" alt="nghe thuat thiet ke hai hoa va tinh xao">
+            </figure>
+        </div>
+    </div>
+</section>
+<section class="block block5">
+    <figure class="block5__bg">
+        <img src="../../assets/images/block5_img.jpg" alt="nghe thuat thiet ke hai hoa va tinh xao">
+    </figure>
+</section>
+<section class="block block6">
+    <figure class="block6__bg">
+        <img src="../../assets/images/block6_bg.jpg" alt="nghe thuat thiet ke hai hoa va tinh xao">
+    </figure>
+    <div class="block6__wrap">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a
+                    class="nav-link active"
+                    id="home-tab"
+                    data-toggle="tab"
+                    href="#home"
+                    role="tab"
+                    aria-controls="home"
+                    aria-selected="true"
+                >Home</a>
+            </li>
+            <li class="nav-item">
+                <a
+                    class="nav-link"
+                    id="profile-tab"
+                    data-toggle="tab"
+                    href="#profile"
+                    role="tab"
+                    aria-controls="profile"
+                    aria-selected="false"
+                >Profile</a>
+            </li>
+            <li class="nav-item">
+                <a
+                    class="nav-link"
+                    id="contact-tab"
+                    data-toggle="tab"
+                    href="#contact"
+                    role="tab"
+                    aria-controls="contact"
+                    aria-selected="false"
+                >Contact</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div
+                class="tab-pane fade show active"
+                id="home"
+                role="tabpanel"
+                aria-labelledby="home-tab"
+            >...</div>
+            <div
+                class="tab-pane fade"
+                id="profile"
+                role="tabpanel"
+                aria-labelledby="profile-tab"
+            >...</div>
+            <div
+                class="tab-pane fade"
+                id="contact"
+                role="tabpanel"
+                aria-labelledby="contact-tab"
+            >...</div>
+        </div>
+    </div>
+</section>
 {% endblock %}
