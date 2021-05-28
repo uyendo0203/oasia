@@ -74,7 +74,7 @@ button {
     .loader {
         border: 5px solid #f3f3f3;
         border-radius: 50%;
-        border-top: 5px solid #173c67;
+        border-top: 5px solid #bd974b;
         width: 50px;
         height: 50px;
         -webkit-animation: spin 2s linear infinite;
@@ -222,6 +222,10 @@ button {
         position: absolute;
         left: 345px;
         top: 0;
+        max-width: 150px;
+        &.scroll {
+            max-width: 100px;
+        }
     }
     &__text_toggle {
         @include flexbox;
@@ -588,7 +592,7 @@ button {
     background-size: 100% 100%;
     background-position: center center;
     background-image: url(../assets/images/button-bg.png);
-    height: 80px;
+    height: 70px;
     width: 225px;
     color: #fff;
     font-size: 18px;

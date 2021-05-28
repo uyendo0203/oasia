@@ -79,6 +79,10 @@ $(window).on("load", function () {
     Menu()
     OpenMenu()
     CloseMenu()
+    Block1ValidateForm()
+    block4Slider()
+    block6Slider()
+    block7Slider()
 });
 
 $(window).on("scroll", function () {
@@ -88,7 +92,25 @@ $(window).on("scroll", function () {
 $(window).on("resize", function () {
 
 });
-
+let Block1ValidateForm = function () {
+    var form = [{
+        name: '.block1Name',
+        validators: ['required']
+    }, {
+        name: '.block1Phone',
+        validators: ['required', 'minLength', 'maxLength'],
+        minLength: 10,
+        maxLength: 10,
+    }, {
+        name: '.block1Email',
+        validators: []
+    }, {
+        name: '.block1Note',
+        validators: []
+    }]
+    var $submit = ".block1 .form__submit";
+    validateForm($submit, form);
+}
 let PopupValidateForm = function () {
     var form = [{
         name: '.PopupName',
@@ -105,7 +127,7 @@ let PopupValidateForm = function () {
         name: '.PopupNote',
         validators: []
     }]
-    var $submit = ".popup__button button";
+    var $submit = ".popup__button .form__submit";
     validateForm($submit, form);
 }
 
@@ -154,4 +176,54 @@ let CloseMenu = function () {
         }
     })
 }
+
+let block4Slider = function () {
+    $('.block4__slider').slick({
+        arrow: false,
+        dots: false,
+        infinite: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+    });
+}
+let block6Slider = function () {
+    $('#block6-slider-1').slick({
+        arrow: true,
+        dots: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        prevArrow: '#block6__slider1 .slick-prev',
+        nextArrow: '#block6__slider1 .slick-next',
+    });
+    $('#block6-slider-2').slick({
+        arrow: true,
+        dots: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        nextArrow: '<button type="button" class="slick-arrow slick-next">Next</button>',
+    });
+}
+
+let block7Slider = function () {
+    $('.block7__slider .slider-for').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: 'block7__slider .slider-nav'
+    });
+    $('.block7__slider--right .slider-nav').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        asNavFor: '.block7__slider .slider-for',
+        dots: false,
+        infinite: true,
+        arrows: true,
+        focusOnSelect: true,
+        prevArrow: '.block7__slider .slick-prev',
+        nextArrow: '.block7__slider .slick-next',
+    });
+
+}
+
 
