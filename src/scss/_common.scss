@@ -223,6 +223,7 @@ button {
         left: 345px;
         top: 0;
         max-width: 150px;
+        transition: all 0.3s ease;
         &.scroll {
             max-width: 100px;
         }
@@ -599,5 +600,29 @@ button {
     &:hover {
         background-image: url(../assets/images/button-bg-hover.png);
         color: #4e5055;
+    }
+}
+
+// tabs
+.nav-tabs {
+    border: none;
+    @include justify-content(center);
+    .nav-link {
+        @include Cormorant-Bold;
+        color: #2b2722;
+        border: none;
+        border-radius: 0;
+        padding: 3px 33px 16px 33px;
+        font-size: 32px;
+        &:hover,
+        &.active {
+            background-image: url(../assets/images/block6-tab-bg-hover.png);
+            background-color: transparent;
+            border: none;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            color: #fff;
+            background-position: center center;
+        }
     }
 }

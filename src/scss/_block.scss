@@ -145,6 +145,75 @@
 .block3 {
     height: 915px;
     position: relative;
+    &__bg {
+    }
+    &__wrap {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+    &__title {
+        text-align: center;
+        transform: translateY(-60px);
+    }
+    &__title--img {
+        max-width: 215px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    &__title--text {
+        color: #fff;
+        span {
+            display: block;
+            text-transform: uppercase;
+        }
+        .small {
+        }
+        .big {
+        }
+    }
+    &__sliders {
+        max-width: 1420px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+    }
+    &__content {
+        .text {
+            color: #fff;
+        }
+        .img-small {
+            max-width: 90px;
+            // margin-left: auto;
+            // margin-right: auto;
+        }
+        .img-center {
+            // display: none;
+            max-width: 490px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    &__slider--nav-wrap {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        transform: translateY(-50%);
+    }
+    .nav {
+        .slick-center {
+            // margin: 0 100px;
+        }
+    }
+    .for {
+        max-width: 490px;
+        margin: 0 auto;
+    }
+    .slick-track {
+        display: flex;
+        align-items: center;
+    }
 }
 .block4 {
     // height: 1100px;
@@ -199,20 +268,50 @@
         margin-right: 110px;
     }
     .nav {
+        padding-top: 35px;
+        padding-bottom: 60px;
     }
     .nav-item {
     }
     .tab-content {
+        margin-bottom: 50px;
     }
     .tab-pane {
+    }
+    &__center {
         display: flex;
         position: relative;
+        color: #000;
     }
     &__left {
+        position: relative;
+        z-index: 1;
     }
     &__right {
+        @include transform(translateX(-75px));
+        position: relative;
+        .slick-dots {
+            bottom: 100px;
+            z-index: 2;
+            li {
+                width: 14px;
+                height: 14px;
+                border-radius: 50%;
+                margin: 0 5px;
+                background-color: #ccc0a6;
+                @include transition(all 0.3s ease);
+                button {
+                    display: none;
+                }
+                &.slick-active {
+                    background-color: #806221;
+                }
+            }
+        }
     }
     &__summary {
+        padding-left: 55px;
+        max-width: 815px;
     }
     &__title {
     }
@@ -222,12 +321,22 @@
         max-width: 1045px;
     }
     &__slider1--title {
+        @include Cormorant-Bold;
+        @include transform(translateY(15px));
+        color: #2b27224d;
+        font-size: 110px;
+        line-height: 0.7;
+        text-transform: uppercase;
+        padding-left: 55px;
     }
     &__slider1--item {
     }
     &__slider1--arrow {
-        display: flex;
-        align-items: center;
+        @include flexbox;
+        @include align-items(center);
+        @include justify-content(flex-end);
+        padding-right: 85px;
+        margin-top: 30px;
         .slick-arrow {
             width: 65px;
             height: auto;
@@ -239,6 +348,8 @@
         .slick-prev {
         }
         .slick-number {
+            min-width: 73px;
+            text-align: center;
             font-size: 55px;
             line-height: 40px;
             margin: 0 20px;
@@ -247,9 +358,32 @@
     }
     &__slider2 {
         max-width: 627px;
-        background-size: 100% 100%;
-        background-position: center;
-        background-image: url(../assets/images/block6-frame-bg.png);
+        position: relative;
+        overflow: hidden;
+        padding-right: 50px;
+        &::before {
+            position: absolute;
+            content: "";
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            background-size: 100% 100%;
+            background-position: center;
+            background-image: url(../assets/images/block6-frame-bg.png);
+        }
+        .slick-arrow {
+            transform: none;
+            cursor: pointer;
+            z-index: 1;
+            right: 100px;
+            bottom: 100px;
+            top: auto;
+            width: 72px;
+            height: 72px;
+            background-image: url(../assets/images/block6-arrow-right.png);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
     }
     &__slider2--item {
         text-align: center;
@@ -431,5 +565,18 @@
         }
         .value {
         }
+    }
+}
+
+// slider loader
+
+#block4__slider,
+#block6-slider-1,
+#block6-slider-2,
+#block7__slider--for,
+#block7__slider--nav {
+    @include your_slider_wrapper;
+    &.slick-initialized {
+        @include your_slider_wrapper_done;
     }
 }

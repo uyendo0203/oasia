@@ -80,13 +80,16 @@ $(window).on("load", function () {
     OpenMenu()
     CloseMenu()
     Block1ValidateForm()
+    block3Slider()
     block4Slider()
     block6Slider()
     block7Slider()
 });
 
-$(window).on("scroll", function () {
-
+$(window).scroll(function () {
+    $(window).scrollTop() >= 145
+        ? $('.menu__logo').addClass('scroll')
+        : $('.menu__logo').removeClass('scroll');
 });
 
 $(window).on("resize", function () {
@@ -177,8 +180,55 @@ let CloseMenu = function () {
     })
 }
 
+let block3Slider = function () {
+    // $('#block3__slider').slick({
+    //     centerMode: true,
+    //     centerPadding: '20px',
+    //     slidesToShow: 5,
+    //     // responsive: [
+    //     //     {
+    //     //         breakpoint: 768,
+    //     //         settings: {
+    //     //             arrows: false,
+    //     //             centerMode: true,
+    //     //             centerPadding: '40px',
+    //     //             slidesToShow: 3
+    //     //         }
+    //     //     },
+    //     //     {
+    //     //         breakpoint: 480,
+    //     //         settings: {
+    //     //             arrows: false,
+    //     //             centerMode: true,
+    //     //             centerPadding: '40px',
+    //     //             slidesToShow: 1
+    //     //         }
+    //     //     }
+    //     // ]
+    // });
+
+    $('#block3__slider--for').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        fade: true,
+        asNavFor: '#block3__slider--nav'
+    });
+    $('#block3__slider--nav').slick({
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        asNavFor: '#block3__slider--for',
+        dots: false,
+        arrows: false,
+        centerMode: true,
+        focusOnSelect: true,
+        centerMode: true,
+        centerPadding: '50px',
+    });
+
+}
 let block4Slider = function () {
-    $('.block4__slider').slick({
+    $('#block4__slider').slick({
         arrow: false,
         dots: false,
         infinite: false,
@@ -187,17 +237,33 @@ let block4Slider = function () {
     });
 }
 let block6Slider = function () {
+
+    let numberActive = function (currentSlide) {
+        let number = 0;
+        if (currentSlide < 9) {
+            number = '0' + (currentSlide + 1)
+        } else {
+            number = currentSlide + 1
+        }
+        $('.block6__slider1--arrow .slick-number').html(number)
+    }
+
     $('#block6-slider-1').slick({
         arrow: true,
         dots: false,
         slidesToShow: 1,
         slidesToScroll: 1,
-        prevArrow: '#block6__slider1 .slick-prev',
-        nextArrow: '#block6__slider1 .slick-next',
+        prevArrow: '.block6__slider1--arrow .slick-prev',
+        nextArrow: '.block6__slider1--arrow .slick-next',
+    }).on('afterChange', function (event, slick) {
+        console.log('afterChange');
+        numberActive(slick.currentSlide)
     });
+
     $('#block6-slider-2').slick({
         arrow: true,
         dots: true,
+        // fade: true,
         slidesToShow: 1,
         slidesToScroll: 1,
         nextArrow: '<button type="button" class="slick-arrow slick-next">Next</button>',
@@ -205,23 +271,26 @@ let block6Slider = function () {
 }
 
 let block7Slider = function () {
-    $('.block7__slider .slider-for').slick({
+    $('#block7__slider--for').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
         fade: true,
-        asNavFor: 'block7__slider .slider-nav'
+        asNavFor: '#block7__slider--nav'
     });
-    $('.block7__slider--right .slider-nav').slick({
+    $('#block7__slider--nav').slick({
         slidesToShow: 3,
         slidesToScroll: 1,
-        asNavFor: '.block7__slider .slider-for',
+        asNavFor: '#block7__slider--for',
         dots: false,
         infinite: true,
         arrows: true,
         focusOnSelect: true,
         prevArrow: '.block7__slider .slick-prev',
         nextArrow: '.block7__slider .slick-next',
+    }).on('afterChange', function (event, slick) {
+        $('.block7__title-slide-item').removeClass('active')
+        $('.block7__slider-nav-text-' + slick.currentSlide).addClass('active')
     });
 
 }
