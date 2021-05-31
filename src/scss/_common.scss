@@ -2,7 +2,12 @@ body {
     font-family: $Montserrat;
     font-weight: 500;
     font-size: 16px;
+    font-size: 0.833vw;
     padding: 0;
+    background: #e5e2db;
+    @media (max-width: 767px) {
+        font-size: 16px;
+    }
 }
 
 a {
@@ -220,10 +225,17 @@ button {
     }
     &__logo {
         position: absolute;
-        left: 300px;
         top: 0;
-        max-width: 230px;
         transition: all 0.3s ease;
+        // left: 300px;
+        // max-width: 230px;
+        left: 15.625vw;
+        width: 11.979vw;
+
+        @media (max-width: 767px) {
+            left: 30px;
+            width: 150px;
+        }
         &.scroll {
             max-width: 180px;
         }
@@ -466,7 +478,7 @@ button {
 
 .form {
     // max-width: 555px;
-    width: 515px;
+    width: 26.823vw;
     margin: 0 auto;
     position: absolute;
 
@@ -545,22 +557,26 @@ button {
     }
 
     .form-group {
-        margin-bottom: 13px;
+        // margin-bottom: 15px;
+        margin-bottom: 0.781vw;
+        @media (max-width: 767px) {
+            margin-bottom: 15px;
+        }
     }
 
     .form-control {
         height: 50px;
+        height: 2.604vw;
         // border-radius: 1.823vw;
         border-radius: 0;
         background-color: #fff;
         padding: 0.521vw 1.042vw;
-        font-size: 1.146vw;
-        font-size: 18px;
+        font-size: 0.938vw;
         color: #fff;
 
         @media (max-width: 767px) {
             @include mb_fs14;
-            height: 45px;
+            height: 50px;
             border-radius: 25px;
             padding: 10px;
         }
@@ -570,6 +586,7 @@ button {
 
             @media (max-width: 767px) {
                 @include mb_fs14;
+                padding-left: 15px;
             }
         }
 
@@ -602,6 +619,12 @@ button {
     height: 4.167vw;
     width: 11.719vw;
     font-size: 1.25vw;
+
+    @media (max-width: 767px) {
+        height: 55px;
+        width: 175px;
+        font-size: 20px;
+    }
     &:hover {
         background-image: url(../assets/images/v6-button-hover.png);
         color: #4e5055;
@@ -617,8 +640,14 @@ button {
         color: #4c4a4b;
         border: none;
         border-radius: 0;
-        padding: 3px 33px 16px 33px;
-        font-size: 32px;
+        // padding: 3px 33px 16px 33px;
+        // font-size: 32px;
+        padding: 0.156vw 1.719vw 0.833vw 1.719vw;
+        font-size: 1.667vw;
+        @media (max-width: 767px) {
+            font-size: 24px;
+            padding: 5px 25px 9px 25px;
+        }
         &:hover,
         &.active {
             background-image: url(../assets/images/block6-tab-bg-hover.png);

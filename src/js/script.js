@@ -79,7 +79,10 @@ $(window).on("load", function () {
     Menu()
     OpenMenu()
     CloseMenu()
+
     Block1ValidateForm()
+    Block7ValidateForm()
+
     block4Slider()
     block5Slider()
     block6Slider()
@@ -96,22 +99,20 @@ $(window).on("load", function () {
             prevEl: '.swiper-prev',
         },
         breakpoints: {
-            640: {
+            767: {
                 slidesPerView: 1,
-            },
-            991: {
-                slidesPerView: 3,
-            },
+
+            }
         },
         on: {
             init: function (slide) {
                 /* do something */
-                console.log('slide-init', swiper);
+                // console.log('slide-init', swiper);
                 $('.swiper-slide-next').next(1).addClass('swiper-slide-next-next')
             },
             slideChange: function (slide) {
                 /* do something */
-                console.log('slide-changed', swiper);
+                // console.log('slide-changed', swiper);
                 let current
                 if (swiper) {
                     if (swiper.realIndex) {
@@ -120,7 +121,6 @@ $(window).on("load", function () {
                     if (swiper.realIndex == 0) {
                         current = 1
                     }
-                    console.log(current);
                     $('.block3__list-text .text').removeClass('active')
                     $('.block3__list-text-' + current).addClass('active')
 
@@ -128,6 +128,9 @@ $(window).on("load", function () {
                     $('.swiper-slide-prev').next(1).addClass('swiper-slide-next-next')
                     $('.swiper-slide-prev').next(-1).removeClass('swiper-slide-next-next')
                     $('.swiper-slide-next').nextAll().removeClass('swiper-slide-next-next')
+
+                    $('.swiper-slide-prev').prev(-1).addClass('swiper-slide-prev-prev')
+
                     setTimeout(() => {
                         if ($('.swiper-slide-next').hasClass('swiper-slide-next-next')) {
                             $('.swiper-slide-next').removeClass('swiper-slide-next-next')
@@ -139,6 +142,8 @@ $(window).on("load", function () {
                             $('.swiper-slide-prev').removeClass('swiper-slide-next-next')
                             $('.swiper-slide-prev').next(1).addClass('swiper-slide-next-next')
                         }
+
+
                     }, 100);
 
                 }
@@ -157,45 +162,6 @@ $(window).scroll(function () {
 $(window).on("resize", function () {
 
 });
-let Block1ValidateForm = function () {
-    var form = [{
-        name: '.block1Name',
-        validators: ['required']
-    }, {
-        name: '.block1Phone',
-        validators: ['required', 'minLength', 'maxLength'],
-        minLength: 10,
-        maxLength: 10,
-    }, {
-        name: '.block1Email',
-        validators: []
-    }, {
-        name: '.block1Note',
-        validators: []
-    }]
-    var $submit = ".block1 .form__submit";
-    validateForm($submit, form);
-}
-let PopupValidateForm = function () {
-    var form = [{
-        name: '.PopupName',
-        validators: ['required']
-    }, {
-        name: '.PopupPhone',
-        validators: ['required', 'isNumber', 'minLength', 'maxLength'],
-        minLength: 10,
-        maxLength: 10,
-    }, {
-        name: '.PopupEmail',
-        validators: []
-    }, {
-        name: '.PopupNote',
-        validators: []
-    }]
-    var $submit = ".popup__button .form__submit";
-    validateForm($submit, form);
-}
-
 
 function goToByScroll(echo) {
     $('html,body').animate({
@@ -242,6 +208,66 @@ let CloseMenu = function () {
     })
 }
 
+let Block1ValidateForm = function () {
+    var form = [{
+        name: '.block1Name',
+        validators: ['required']
+    }, {
+        name: '.block1Phone',
+        validators: ['required', 'minLength', 'maxLength'],
+        minLength: 10,
+        maxLength: 10,
+    }, {
+        name: '.block1Email',
+        validators: []
+    }, {
+        name: '.block1Note',
+        validators: []
+    }]
+    var $submit = ".block1 .form__submit";
+    validateForm($submit, form);
+}
+
+let Block7ValidateForm = function () {
+    var form = [{
+        name: '.block7Name',
+        validators: ['required']
+    }, {
+        name: '.block7Phone',
+        validators: ['required', 'minLength', 'maxLength'],
+        minLength: 10,
+        maxLength: 10,
+    }, {
+        name: '.block7Email',
+        validators: []
+    }, {
+        name: '.block7Note',
+        validators: []
+    }]
+    var $submit = ".block8__contact .form__submit";
+    validateForm($submit, form);
+}
+
+let PopupValidateForm = function () {
+    var form = [{
+        name: '.PopupName',
+        validators: ['required']
+    }, {
+        name: '.PopupPhone',
+        validators: ['required', 'isNumber', 'minLength', 'maxLength'],
+        minLength: 10,
+        maxLength: 10,
+    }, {
+        name: '.PopupEmail',
+        validators: []
+    }, {
+        name: '.PopupNote',
+        validators: []
+    }]
+    var $submit = ".popup__button .form__submit";
+    validateForm($submit, form);
+}
+
 let block4Slider = function () {
     $('#block4__slider').slick({
         arrow: true,
@@ -276,18 +302,27 @@ let block6Slider = function () {
         $('.block6__slider1--arrow .slick-number').html(number)
     }
 
+    // init and hide number < 1 
+    $('#block6-slider-1').on('init', function (event, slick) {
+        if (slick.slideCount == 1) {
+            $('.block6__slider1--arrow .slick-number').hide()
+        } else {
+            $('.block6__slider1--arrow .slick-number').show()
+        }
+    });
+
     $('#block6-slider-1').slick({
         arrow: true,
-
         dots: false,
         slidesToShow: 1,
         slidesToScroll: 1,
         prevArrow: '.block6__slider1--arrow .slick-prev',
         nextArrow: '.block6__slider1--arrow .slick-next',
     }).on('afterChange', function (event, slick) {
-        console.log('afterChange');
         numberActive(slick.currentSlide)
     });
+
+
 
     $('#block6-slider-2').slick({
         arrow: true,
@@ -298,7 +333,6 @@ let block6Slider = function () {
         nextArrow: '<button type="button" class="slick-arrow slick-next">Next</button>',
     });
 }
-
 let block7Slider = function () {
     $('#block7__slider--for').slick({
         slidesToShow: 1,
@@ -314,14 +348,22 @@ let block7Slider = function () {
         dots: false,
         infinite: true,
         arrows: true,
+        autoplay: true,
         focusOnSelect: true,
         prevArrow: '.block7__slider .slick-prev',
         nextArrow: '.block7__slider .slick-next',
+        responsive: [
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+        ]
     }).on('afterChange', function (event, slick) {
         $('.block7__title-slide-item').removeClass('active')
         $('.block7__slider-nav-text-' + slick.currentSlide).addClass('active')
     });
-
 }
 
 
