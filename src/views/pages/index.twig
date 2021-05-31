@@ -4,13 +4,10 @@
 {% block content %}
 <div class="menu">
     <a href="#" class="menu__logo">
-        <img src="../../assets/images/logo.png" alt="OASIA">
+        <img src="./assets/images/logo-header.png" alt="OASIA">
     </a>
     {# active #}
     <div class="menu__text_toggle">
-        <span class="text">
-            menu
-        </span>
         <div class="lines">
             <span class="line line_1"></span>
             <span class="line line_2"></span>
@@ -39,7 +36,7 @@
 {# trangchu #}
 <section class="block1 trangchu" id="trangchu">
     <figure class="block1__bg">
-        <img src="../../assets/images/v4_block1_bg.jpg" alt="">
+        <img src="./assets/images/v6_block1_bg.jpg" alt="">
     </figure>
     <div class="form">
         <div class="form__title">
@@ -57,7 +54,7 @@
             </div>
             <div class="form-group wow fadeInUp" data-wow-delay="0.4s">
                 <input
-                    type="text"
+                    type="number"
                     name="phone"
                     placeholder="Số điện thoại"
                     class="form-control block1Phone"
@@ -91,7 +88,7 @@
     </div>
     <div class="block1__right">
         <div class="block1__right--logo">
-            <img src="../../assets/images/v4-block1-logo.png" alt="">
+            <img src="./assets/images/v6-block1-logo.png" alt="">
         </div>
         <div class="block1__right--text">
             <span class="block1__right--text-1">
@@ -108,11 +105,11 @@
 </section>
 <section class="block block2 tongquan" id="tongquan">
     <figure class="block2__bg">
-        <img src="../../assets/images/block2_bg.jpg" alt="khoi ngoc dao xanh    ">
+        <img src="./assets/images/v6-block2-bg.jpg" alt="khoi ngoc dao xanh    ">
     </figure>
     <div class="block2__heading">
         <div class="block2__heading--logo">
-            <img src="../../assets/images/v4-block1-logo.png" alt="">
+            <img src="./assets/images/v4-block2_logo.png" alt="">
         </div>
         <div class="block2__heading--content">
             <div class="block2__heading--title">
@@ -126,9 +123,11 @@
     </div>
     <div class="block2__icon30">
         <div class="block2__icon30--top">
+            {#
             <figure class="block2__icon30--img">
-                <img src="../../assets/images/block2_number_leaf.png" alt="khoi ngoc dao xanh">
+                <img src="./assets/images/block2_number_leaf.png" alt="khoi ngoc dao xanh">
             </figure>
+            #}
             <span class="text">tiện ích</span>
         </div>
         <span class="block2__icon30--bottom">phong cách thượng lưu</span>
@@ -138,19 +137,19 @@
             Mỗi sáng thức giấc tại The Oasia sẽ là khởi đầu cho ngày đáng sống với vô vàn trải nghiệm có một không hai từ cảnh quan sông nước nhẹ nhàng, không khí trong lành, tinh khiết đến nghệ thuật kiến trúc hài hòa giữa sang trọng, tinh xảo cùng thanh khiết, giàu sự uốn lượn, linh hoạt.
         </div>
         <button class="form__submit button">
-            xem thêm
+            Đăng ký
         </button>
     </div>
 </div>
 </section>
 <section class="block block3">
     <figure class="block3__bg">
-        <img src="../../assets/images/block3_bg.png" alt="10 dac diem noi troi cua swanbay oasia">
+        <img src="./assets/images/v6-block3-bg.jpg" alt="10 dac diem noi troi cua swanbay oasia">
     </figure>
     <div class="block3__wrap">
         <div class="block3__title">
             <figure class="block3__title--img">
-                <img src="../../assets/images/v4-block3-number-10.png" alt="">
+                <img src="./assets/images/v6-block3-number-10.png" alt="">
             </figure>
             <div class="block3__title--text">
                 <span class="small">đặc điểm vượt trội</span>
@@ -158,87 +157,138 @@
             </div>
         </div>
         <div class="block3__sliders">
-            <div class="block3__slider--nav-wrap">
-                <div id="block3__slider--nav" class="block3__content nav">
-                    <div class="block3__item">
-                        <div class="img-small">
-                            <img src="../../assets/images/block3-icon1.png" alt="">
+            <div class="swiper-container" data-aos="flip-up" data-aos-duration="1400">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="swiper-slide-wrap">
+                            <div class="img-icon">
+                                <img class="w-100" src="./assets/images/block3-icon1.png" alt="screenshot">
+                            </div>
+                            <div class="text">công viên</div>
+                            <div class="img-center">
+                                <img src="./assets/images/v6-block3-center.png" alt="">
+                            </div>
                         </div>
-                        <div class="text">CÔNG VIÊN</div>
                     </div>
-                    <div class="block3__item">
-                        <div class="img-small">
-                            <img src="../../assets/images/block3-icon2.png" alt="">
+                    <div class="swiper-slide">
+                        <div class="swiper-slide-wrap">
+                            <div class="img-icon">
+                                <img class="w-100" src="./assets/images/block3-icon2.png" alt="screenshot">
+                            </div>
+                            <div class="text">công viên</div>
+                            <div class="img-center">
+                                <img src="./assets/images/v6-block3-center.png" alt="">
+                            </div>
                         </div>
-                        <div class="text">CÔNG VIÊN</div>
                     </div>
-                    <div class="block3__item">
-                        <div class="img-small">
-                            <img src="../../assets/images/block3-icon3.png" alt="">
+                    <div class="swiper-slide">
+                        <div class="swiper-slide-wrap">
+                            <div class="img-icon">
+                                <img class="w-100" src="./assets/images/block3-icon3.png" alt="screenshot">
+                            </div>
+                            <div class="text">công viên</div>
+                            <div class="img-center">
+                                <img src="./assets/images/v6-block3-center.png" alt="">
+                            </div>
                         </div>
-                        <div class="text">CÔNG VIÊN</div>
                     </div>
-                    <div class="block3__item">
-                        <div class="img-small">
-                            <img src="../../assets/images/block3-icon4.png" alt="">
+                    <div class="swiper-slide">
+                        <div class="swiper-slide-wrap">
+                            <div class="img-icon">
+                                <img class="w-100" src="./assets/images/block3-icon4.png" alt="screenshot">
+                            </div>
+                            <div class="text">công viên</div>
+                            <div class="img-center">
+                                <img src="./assets/images/v6-block3-center.png" alt="">
+                            </div>
                         </div>
-                        <div class="text">CÔNG VIÊN</div>
                     </div>
-                    <div class="block3__item">
-                        <div class="img-small">
-                            <img src="../../assets/images/block3-icon1.png" alt="">
+                    <div class="swiper-slide">
+                        <div class="swiper-slide-wrap">
+                            <div class="img-icon">
+                                <img class="w-100" src="./assets/images/block3-icon1.png" alt="screenshot">
+                            </div>
+                            <div class="text">công viên</div>
+                            <div class="img-center">
+                                <img src="./assets/images/v6-block3-center.png" alt="">
+                            </div>
                         </div>
-                        <div class="text">CÔNG VIÊN</div>
                     </div>
-                    <div class="block3__item">
-                        <div class="img-small">
-                            <img src="../../assets/images/block3-icon2.png" alt="">
+                    <div class="swiper-slide">
+                        <div class="swiper-slide-wrap">
+                            <div class="img-icon">
+                                <img class="w-100" src="./assets/images/block3-icon2.png" alt="screenshot">
+                            </div>
+                            <div class="text">công viên</div>
+                            <div class="img-center">
+                                <img src="./assets/images/v6-block3-center.png" alt="">
+                            </div>
                         </div>
-                        <div class="text">CÔNG VIÊN</div>
                     </div>
-                    <div class="block3__item">
-                        <div class="img-small">
-                            <img src="../../assets/images/block3-icon3.png" alt="">
+                    <div class="swiper-slide">
+                        <div class="swiper-slide-wrap">
+                            <div class="img-icon">
+                                <img class="w-100" src="./assets/images/block3-icon3.png" alt="screenshot">
+                            </div>
+                            <div class="text">công viên</div>
+                            <div class="img-center">
+                                <img src="./assets/images/v6-block3-center.png" alt="">
+                            </div>
                         </div>
-                        <div class="text">CÔNG VIÊN</div>
                     </div>
+                    <div class="swiper-slide">
+                        <div class="swiper-slide-wrap">
+                            <div class="img-icon">
+                                <img class="w-100" src="./assets/images/block3-icon4.png" alt="screenshot">
+                            </div>
+                            <div class="text">công viên</div>
+                            <div class="img-center">
+                                <img src="./assets/images/v6-block3-center.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Navigation -->
+                <div class="swiper-next swiper-button">
+                    <i class="fas fa-angle-right"></i>
+                    <img src="./assets/images/v6-slider-arrow-right.png" alt="">
+                </div>
+                <div class="swiper-prev swiper-button">
+                    <img src="./assets/images/v6-slider-arrow-left.png" alt="">
                 </div>
             </div>
-            <div id="block3__slider--for" class="block3__content for">
-                <div class="block3__item">
-                    <div class="img-center">
-                        <img src="../../assets/images/v4-block3-center.png" alt="">
-                    </div>
+            <div class="block3__list-text">
+                <div class="text block3__list-text-1 active">
+                    <h2>Được phát triển bởi công ty uy tín SwanCity 1</h2>
+                    <p>Phát triển bởi thương hiệu phát triển BĐS quốc tế SwanCity trụ sở tại Singapore với kinh nghiệm phát triển BĐS toàn cầu cùng tầm nhìn về tương lai.</p>
                 </div>
-                <div class="block3__item">
-                    <div class="img-center">
-                        <img src="../../assets/images/v4-block3-center.png" alt="">
-                    </div>
+                <div class="text block3__list-text-2">
+                    <h2>Được phát triển bởi công ty uy tín SwanCity 2</h2>
+                    <p>Phát triển bởi thương hiệu phát triển BĐS quốc tế SwanCity trụ sở tại Singapore với kinh nghiệm phát triển BĐS toàn cầu cùng tầm nhìn về tương lai.</p>
                 </div>
-                <div class="block3__item">
-                    <div class="img-center">
-                        <img src="../../assets/images/v4-block3-center.png" alt="">
-                    </div>
+                <div class="text block3__list-text-3">
+                    <h2>Được phát triển bởi công ty uy tín SwanCity 3</h2>
+                    <p>Phát triển bởi thương hiệu phát triển BĐS quốc tế SwanCity trụ sở tại Singapore với kinh nghiệm phát triển BĐS toàn cầu cùng tầm nhìn về tương lai.</p>
                 </div>
-                <div class="block3__item">
-                    <div class="img-center">
-                        <img src="../../assets/images/v4-block3-center.png" alt="">
-                    </div>
+                <div class="text block3__list-text-4">
+                    <h2>Được phát triển bởi công ty uy tín SwanCity 4</h2>
+                    <p>Phát triển bởi thương hiệu phát triển BĐS quốc tế SwanCity trụ sở tại Singapore với kinh nghiệm phát triển BĐS toàn cầu cùng tầm nhìn về tương lai.</p>
                 </div>
-                <div class="block3__item">
-                    <div class="img-center">
-                        <img src="../../assets/images/v4-block3-center.png" alt="">
-                    </div>
+                <div class="text block3__list-text-5">
+                    <h2>Được phát triển bởi công ty uy tín SwanCity 5</h2>
+                    <p>Phát triển bởi thương hiệu phát triển BĐS quốc tế SwanCity trụ sở tại Singapore với kinh nghiệm phát triển BĐS toàn cầu cùng tầm nhìn về tương lai.</p>
                 </div>
-                <div class="block3__item">
-                    <div class="img-center">
-                        <img src="../../assets/images/v4-block3-center.png" alt="">
-                    </div>
+                <div class="text block3__list-text-6">
+                    <h2>Được phát triển bởi công ty uy tín SwanCity 6</h2>
+                    <p>Phát triển bởi thương hiệu phát triển BĐS quốc tế SwanCity trụ sở tại Singapore với kinh nghiệm phát triển BĐS toàn cầu cùng tầm nhìn về tương lai.</p>
                 </div>
-                <div class="block3__item">
-                    <div class="img-center">
-                        <img src="../../assets/images/v4-block3-center.png" alt="">
-                    </div>
+                <div class="text block3__list-text-7">
+                    <h2>Được phát triển bởi công ty uy tín SwanCity 7</h2>
+                    <p>Phát triển bởi thương hiệu phát triển BĐS quốc tế SwanCity trụ sở tại Singapore với kinh nghiệm phát triển BĐS toàn cầu cùng tầm nhìn về tương lai.</p>
+                </div>
+                <div class="text block3__list-text-8">
+                    <h2>Được phát triển bởi công ty uy tín SwanCity 8</h2>
+                    <p>Phát triển bởi thương hiệu phát triển BĐS quốc tế SwanCity trụ sở tại Singapore với kinh nghiệm phát triển BĐS toàn cầu cùng tầm nhìn về tương lai.</p>
                 </div>
             </div>
         </div>
@@ -246,36 +296,110 @@
 </section>
 <section class="block block4">
     <figure class="block4__bg">
-        <img src="../../assets/images/block4_bg.jpg" alt="nghe thuat thiet ke hai hoa va tinh xao">
+        <img src="./assets/images/v6-block4-bg.jpg" alt="nghe thuat thiet ke hai hoa va tinh xao">
     </figure>
     <div class="block4__slider--wrap">
-        <div id="block4__slider" class="block4__slider">
-            <div class="block4__item">
-                <figure class="block4__left">
-                    <img src="../../assets/images/block4-map.png" alt="nghe thuat thiet ke hai hoa va tinh xao">
-                </figure>
-                <div class="block4__right">
-                    <figure class="block4__logo">
-                        <img src="../../assets/images/block4-icon-logo.png" alt="nghe thuat thiet ke hai hoa va tinh xao">
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+                <a
+                    class="nav-link active"
+                    id="home-tab"
+                    data-toggle="tab"
+                    href="#block4_tab1"
+                    role="tab"
+                >So</a>
+            </li>
+            <li class="nav-item">
+                <a
+                    class="nav-link"
+                    id="profile-tab"
+                    data-toggle="tab"
+                    href="#block4_tab2"
+                    role="tab"
+                >Sei</a>
+            </li>
+            <li class="nav-item">
+                <a
+                    class="nav-link"
+                    id="contact-tab"
+                    data-toggle="tab"
+                    href="#block4_tab3"
+                    role="tab"
+                >Sumi</a>
+            </li>
+            <li class="nav-item">
+                <a
+                    class="nav-link"
+                    id="contact-tab"
+                    data-toggle="tab"
+                    href="#block4_tab4"
+                    role="tab"
+                >Miyabi</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="block4_tab1">
+                <div class="block4__item">
+                    <figure class="block4__left">
+                        <img src="./assets/images/v4-block4-map.png" alt="nghe thuat thiet ke hai hoa va tinh xao">
                     </figure>
-                    <div class="block4__title">Nghệ thuật thiết kế hài hòa và tinh xảo</div>
-                    <div class="block4__des">Phân khu SO đặc trưng bởi các đường nét bo tròn mềm mại, tinh xảo chạm đến đỉnh cao của nghệ thuật kiến trúc cùng sự kết nối hài hòa hai chiều giữa kiến trúc và cảnh quan, mang đến trải nghiệm sống tận hưởng liền mạch cho cư dân.</div>
-                    <figure class="block4__img">
-                        <img src="../../assets/images/block4-img.jpg" alt="nghe thuat thiet ke hai hoa va tinh xao">
-                    </figure>
+                    <div class="block4__right">
+                        <figure class="block4__logo">
+                            <img src="./assets/images/block4-icon-logo.png" alt="nghe thuat thiet ke hai hoa va tinh xao">
+                        </figure>
+                        <div class="block4__title">Nghệ thuật thiết kế hài hòa và tinh xảo</div>
+                        <div class="block4__des">Phân khu SO đặc trưng bởi các đường nét bo tròn mềm mại, tinh xảo chạm đến đỉnh cao của nghệ thuật kiến trúc cùng sự kết nối hài hòa hai chiều giữa kiến trúc và cảnh quan, mang đến trải nghiệm sống tận hưởng liền mạch cho cư dân.</div>
+                        <div class="block4__slider">
+                            <div id="block4__slider">
+                                <a class="block4__img" data-fancybox="block4__slider" href="./assets/images/block4-img.jpg">
+                                    <img class="image" src="./assets/images/block4-img.jpg" alt="Phòng Gym">
+                                </a>
+                                <a class="block4__img" data-fancybox="block4__slider" href="./assets/images/block4-img.jpg">
+                                    <img class="image" src="./assets/images/block4-img.jpg" alt="Phòng Gym">
+                                </a>
+                                <a class="block4__img" data-fancybox="block4__slider" href="./assets/images/block4-img.jpg">
+                                    <img class="image" src="./assets/images/block4-img.jpg" alt="Phòng Gym">
+                                </a>
+                            </div>
+                            <div class="block4__slider--arrow">
+                                <button type="button" class="slick-arrow slick-prev">
+                                    <img src="./assets/images/v6-block7-arrow-left.png" alt="">
+                                </button>
+                                <button type="button" class="slick-arrow slick-next">
+                                    <img src="./assets/images/v6-block7-arrow-right.png" alt="">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <div class="tab-pane fade show" id="block4_tab2">2</div>
+            <div class="tab-pane fade show" id="block4_tab3">3</div>
+            <div class="tab-pane fade show" id="block4_tab4">4</div>
         </div>
     </div>
 </section>
 <section class="block block5">
-    <figure class="block5__bg">
-        <img src="../../assets/images/block5_img.jpg" alt="nghe thuat thiet ke hai hoa va tinh xao">
-    </figure>
+    <div id="block5__slider">
+        <figure class="block5__bg">
+            <img src="./assets/images/v6-block5-img.jpg" alt="nghe thuat thiet ke hai hoa va tinh xao">
+        </figure>
+        <figure class="block5__bg">
+            <img src="./assets/images/v6-block5-img.jpg" alt="nghe thuat thiet ke hai hoa va tinh xao">
+        </figure>
+    </div>
+    <div class="block5__slider--arrow">
+        <button type="button" class="slick-arrow slick-prev">
+            <img src="./assets/images/v6-block7-arrow-left.png" alt="">
+        </button>
+        <button type="button" class="slick-arrow slick-next">
+            <img src="./assets/images/v6-block7-arrow-right.png" alt="">
+        </button>
+    </div>
 </section>
 <section class="block block6">
     <figure class="block6__bg">
-        <img src="../../assets/images/block6_bg.jpg" alt="nghe thuat thiet ke hai hoa va tinh xao">
+        <img src="./assets/images/v6-block6-bg.jpg" alt="nghe thuat thiet ke hai hoa va tinh xao">
     </figure>
     <div class="block6__wrap">
         <ul class="nav nav-tabs" role="tablist">
@@ -331,50 +455,17 @@
                         <div class="block6__slider1">
                             <div class="block6__slider1--title">Shop Villa</div>
                             <div id="block6-slider-1" class="block6__slider1--content">
-                                <figure class="block6__slider1--item">
-                                    <img src="../../assets/images/block6-image-active.jpg" alt="">
-                                </figure>
-                                <figure class="block6__slider1--item">
-                                    <img src="../../assets/images/block6-image-active.jpg" alt="">
-                                </figure>
-                                <figure class="block6__slider1--item">
-                                    <img src="../../assets/images/block6-image-active.jpg" alt="">
-                                </figure>
-                                <figure class="block6__slider1--item">
-                                    <img src="../../assets/images/block6-image-active.jpg" alt="">
-                                </figure>
-                                <figure class="block6__slider1--item">
-                                    <img src="../../assets/images/block6-image-active.jpg" alt="">
-                                </figure>
-                                <figure class="block6__slider1--item">
-                                    <img src="../../assets/images/block6-image-active.jpg" alt="">
-                                </figure>
-                                <figure class="block6__slider1--item">
-                                    <img src="../../assets/images/block6-image-active.jpg" alt="">
-                                </figure>
-                                <figure class="block6__slider1--item">
-                                    <img src="../../assets/images/block6-image-active.jpg" alt="">
-                                </figure>
-                                <figure class="block6__slider1--item">
-                                    <img src="../../assets/images/block6-image-active.jpg" alt="">
-                                </figure>
-                                <figure class="block6__slider1--item">
-                                    <img src="../../assets/images/block6-image-active.jpg" alt="">
-                                </figure>
-                                <figure class="block6__slider1--item">
-                                    <img src="../../assets/images/block6-image-active.jpg" alt="">
-                                </figure>
-                                <figure class="block6__slider1--item">
-                                    <img src="../../assets/images/block6-image-active.jpg" alt="">
-                                </figure>
+                                <a class="block6__slider1--item" data-fancybox="block6-slider-1" href="./assets/images/block6-image-active.jpg">
+                                    <img class="image" src="./assets/images/block6-image-active.jpg" alt="Phòng Gym">
+                                </a>
                             </div>
                             <div class="block6__slider1--arrow">
                                 <button type="button" class="slick-arrow slick-prev">
-                                    <img src="../../assets/images/block6-arrow-single-left.png" alt="">
+                                    <img src="./assets/images/block6-arrow-single-left.png" alt="">
                                 </button>
                                 <div class="slick-number">01</div>
                                 <button type="button" class="slick-arrow slick-next">
-                                    <img src="../../assets/images/block6-arrow-single-right.png" alt="">
+                                    <img src="./assets/images/block6-arrow-single-right.png" alt="">
                                 </button>
                             </div>
                         </div>
@@ -382,21 +473,21 @@
                     <div class="block6__right">
                         <div id="block6-slider-2" class="block6__slider2">
                             <div class="block6__slider2--item">
-                                <figure class="img">
-                                    <img src="../../assets/images/block6-slider-1.png" alt="">
-                                </figure>
+                                <a class="img" data-fancybox="block6-slider-2" href="./assets/images/block6-slider-1.png">
+                                    <img class="image" src="./assets/images/block6-slider-1.png" alt="Phòng Gym">
+                                </a>
                                 <div class="text">Ảnh layout tầng 1</div>
                             </div>
                             <div class="block6__slider2--item">
-                                <figure class="img">
-                                    <img src="../../assets/images/block6-slider-1.png" alt="">
-                                </figure>
+                                <a class="img" data-fancybox="block6-slider-2" href="./assets/images/block6-slider-1.png">
+                                    <img class="image" src="./assets/images/block6-slider-1.png" alt="Phòng Gym">
+                                </a>
                                 <div class="text">Ảnh layout tầng 2</div>
                             </div>
                             <div class="block6__slider2--item">
-                                <figure class="img">
-                                    <img src="../../assets/images/block6-slider-1.png" alt="">
-                                </figure>
+                                <a class="img" data-fancybox="block6-slider-2" href="./assets/images/block6-slider-1.png">
+                                    <img class="image" src="./assets/images/block6-slider-1.png" alt="Phòng Gym">
+                                </a>
                                 <div class="text">Ảnh layout tầng 3</div>
                             </div>
                         </div>
@@ -413,16 +504,16 @@
     <div class="block7__slider">
         <div id="block7__slider--for" class="slider-for">
             <figure class="block7__slider-for">
-                <img src="../../assets/images/block7_img.png" alt="">
+                <img src="./assets/images/block7_img.png" alt="">
             </figure>
             <figure class="block7__slider-for">
-                <img src="../../assets/images/block7_img.png" alt="">
+                <img src="./assets/images/block7_img.png" alt="">
             </figure>
             <figure class="block7__slider-for">
-                <img src="../../assets/images/block7_img.png" alt="">
+                <img src="./assets/images/block7_img.png" alt="">
             </figure>
             <figure class="block7__slider-for">
-                <img src="../../assets/images/block7_img.png" alt="">
+                <img src="./assets/images/block7_img.png" alt="">
             </figure>
         </div>
         <div class="block7__bottom">
@@ -438,24 +529,24 @@
             <div class="block7__slider--right">
                 <div class="block7__slider--arrow">
                     <button type="button" class="slick-arrow slick-prev">
-                        <img src="../../assets/images/block7-arrow-left.png" alt="">
+                        <img src="./assets/images/v6-block7-arrow-left.png" alt="">
                     </button>
                     <button type="button" class="slick-arrow slick-next">
-                        <img src="../../assets/images/block7-arrow-right.png" alt="">
+                        <img src="./assets/images/v6-block7-arrow-right.png" alt="">
                     </button>
                 </div>
                 <div id="block7__slider--nav" class="slider-nav">
                     <figure class="block7__slider-nav block7__slider-nav-0">
-                        <img src="../../assets/images/block7-nav-slider.jpg" alt="">
+                        <img src="./assets/images/block7-nav-slider.jpg" alt="">
                     </figure>
                     <figure class="block7__slider-nav block7__slider-nav-1">
-                        <img src="../../assets/images/block7-nav-slider.jpg" alt="">
+                        <img src="./assets/images/block7-nav-slider.jpg" alt="">
                     </figure>
                     <figure class="block7__slider-nav block7__slider-nav-2">
-                        <img src="../../assets/images/block7-nav-slider.jpg" alt="">
+                        <img src="./assets/images/block7-nav-slider.jpg" alt="">
                     </figure>
                     <figure class="block7__slider-nav block7__slider-nav-3">
-                        <img src="../../assets/images/block7-nav-slider.jpg" alt="">
+                        <img src="./assets/images/block7-nav-slider.jpg" alt="">
                     </figure>
                 </div>
             </div>
@@ -474,7 +565,7 @@
                 </div>
                 <div class="form-group wow fadeInUp" data-wow-delay="0.4s">
                     <input
-                        type="text"
+                        type="number"
                         name="phone"
                         placeholder="Số điện thoại"
                         class="form-control block17hone"
@@ -499,12 +590,12 @@
             </div>
             <div class="text-center wow fadeInUp" data-wow-delay="1.1s">
                 <button class="form__submit button" type="submit" disabled>
-                    đăng ký
+                    Đăng ký
                 </button>
             </div>
         </div>
         <a href="#" class="block8__contact--logo">
-            <img src="../../assets/images/block8-logo.png" alt="nghe thuat thiet ke hai hoa va tinh xao">
+            <img src="./assets/images/v6-block8-logo.png" alt="nghe thuat thiet ke hai hoa va tinh xao">
         </a>
         <div class="block8__contact--address">
             <div class="block8__contact--address-item">

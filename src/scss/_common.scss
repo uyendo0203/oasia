@@ -220,12 +220,12 @@ button {
     }
     &__logo {
         position: absolute;
-        left: 345px;
+        left: 300px;
         top: 0;
-        max-width: 150px;
+        max-width: 230px;
         transition: all 0.3s ease;
         &.scroll {
-            max-width: 100px;
+            max-width: 180px;
         }
     }
     &__text_toggle {
@@ -313,7 +313,7 @@ button {
         width: 0;
         top: 0;
         height: 100%;
-        background: #000;
+        background: #bc832cd6;
         padding-top: 10.417vw;
 
         @media (max-width: 767px) {
@@ -532,6 +532,7 @@ button {
         text-align: center;
         margin-left: auto;
         margin-right: auto;
+        @include Montserrat-Medium;
 
         @media (max-width: 767px) {
             max-width: 224px;
@@ -555,6 +556,7 @@ button {
         padding: 0.521vw 1.042vw;
         font-size: 1.146vw;
         font-size: 18px;
+        color: #fff;
 
         @media (max-width: 767px) {
             @include mb_fs14;
@@ -564,7 +566,7 @@ button {
         }
 
         @mixin placeholder {
-            color: #769ba7;
+            color: #4a4138;
 
             @media (max-width: 767px) {
                 @include mb_fs14;
@@ -592,13 +594,16 @@ button {
 .button {
     background-size: 100% 100%;
     background-position: center center;
-    background-image: url(../assets/images/button-bg.png);
-    height: 70px;
-    width: 225px;
+    background-image: url(../assets/images/v6-button.png);
     color: #fff;
-    font-size: 18px;
+    height: 80px;
+    width: 225px;
+    font-size: 24px;
+    height: 4.167vw;
+    width: 11.719vw;
+    font-size: 1.25vw;
     &:hover {
-        background-image: url(../assets/images/button-bg-hover.png);
+        background-image: url(../assets/images/v6-button-hover.png);
         color: #4e5055;
     }
 }
@@ -609,7 +614,7 @@ button {
     @include justify-content(center);
     .nav-link {
         @include Cormorant-Bold;
-        color: #2b2722;
+        color: #4c4a4b;
         border: none;
         border-radius: 0;
         padding: 3px 33px 16px 33px;
@@ -625,4 +630,20 @@ button {
             background-position: center center;
         }
     }
+}
+
+// hide arrow input number
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type="number"] {
+    -moz-appearance: textfield; /* Firefox */
+}
+
+.fancybox-slide--image .fancybox-content {
+    background-color: #fff;
 }
