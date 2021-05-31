@@ -151,6 +151,14 @@ $(window).on("load", function () {
         }
     });
 
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+        $('.block4__slider-js').slick('resize');
+    })
+
+    $(".block4__slider--wrap .nav.nav-tabs").on("toggled", function (event, tab) {
+        $('.block4__slider-js').slick('resize');
+    });
+
 });
 
 $(window).scroll(function () {
@@ -175,7 +183,7 @@ let Menu = function () {
 
         let link = $(this).attr('link')
 
-        // $('.menu__absolute a').removeClass('active');
+        $('.menu__absolute a').removeClass('active');
         $('.menu__absolute a[link="' + link + '"]').addClass('active');
 
 
@@ -269,7 +277,8 @@ let PopupValidateForm = function () {
 }
 
 let block4Slider = function () {
-    $('#block4__slider').slick({
+    $('.block4__slider-js').slick({
+        autoplay: true,
         arrow: true,
         dots: false,
         infinite: false,
@@ -281,6 +290,7 @@ let block4Slider = function () {
 }
 let block5Slider = function () {
     $('#block5__slider').slick({
+        autoplay: true,
         arrow: true,
         dots: false,
         infinite: false,
@@ -312,6 +322,7 @@ let block6Slider = function () {
     });
 
     $('#block6-slider-1').slick({
+        autoplay: true,
         arrow: true,
         dots: false,
         slidesToShow: 1,
@@ -325,6 +336,7 @@ let block6Slider = function () {
 
 
     $('#block6-slider-2').slick({
+        autoplay: true,
         arrow: true,
         dots: true,
         fade: true,
@@ -335,6 +347,7 @@ let block6Slider = function () {
 }
 let block7Slider = function () {
     $('#block7__slider--for').slick({
+        autoplay: true,
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
