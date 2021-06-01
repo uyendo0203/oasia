@@ -339,7 +339,7 @@ let block6Slider = function () {
         autoplay: true,
         arrow: true,
         dots: false,
-        infinite: true,
+        infinite: false,
         slidesToShow: 1,
         slidesToScroll: 1,
         prevArrow: '.block6__slider1--arrow .slick-prev',
@@ -348,14 +348,12 @@ let block6Slider = function () {
         numberActive(slick.currentSlide)
     });
 
-
-
     $('.block6-slider-2-js').slick({
         autoplay: true,
         arrow: true,
         dots: true,
         fade: true,
-        infinite: true,
+        infinite: false,
         slidesToShow: 1,
         slidesToScroll: 1,
         nextArrow: '<button type="button" class="slick-arrow slick-next">Next</button>',
