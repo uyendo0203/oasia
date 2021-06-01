@@ -175,8 +175,18 @@ $(window).on("resize", function () {
 });
 
 function goToByScroll(echo) {
+    let space = 70
+    switch (echo) {
+        case 'udvt':
+            space = -70
+            break;
+        default:
+            space = 0
+            break;
+    }
+
     $('html,body').animate({
-        scrollTop: $("#" + echo).offset().top,
+        scrollTop: $("#" + echo).offset().top + space,
     }, 'slow');
 }
 
@@ -296,7 +306,8 @@ let block5Slider = function () {
         autoplay: true,
         arrow: true,
         dots: false,
-        infinite: false,
+        loop: true,
+        infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
         prevArrow: '.block5__slider--arrow .slick-prev',
@@ -328,6 +339,7 @@ let block6Slider = function () {
         autoplay: true,
         arrow: true,
         dots: false,
+        infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
         prevArrow: '.block6__slider1--arrow .slick-prev',
@@ -343,6 +355,7 @@ let block6Slider = function () {
         arrow: true,
         dots: true,
         fade: true,
+        infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
         nextArrow: '<button type="button" class="slick-arrow slick-next">Next</button>',

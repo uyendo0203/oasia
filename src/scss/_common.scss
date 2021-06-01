@@ -218,7 +218,7 @@ button {
 }
 
 .menu {
-    position: fixed;
+    position: absolute;
     z-index: 2;
     @include flexbox;
     @include align-items(center);
@@ -257,7 +257,7 @@ button {
         @include align-items(center);
         cursor: pointer;
         z-index: 1;
-
+        position: fixed;
         .text {
             color: #fff;
             text-transform: uppercase;
@@ -349,7 +349,7 @@ button {
         &.active {
             opacity: 1;
             visibility: visible;
-            z-index: 2;
+            z-index: 100; //>  .swiper-next,.swiper-prev z-index: 99;
             width: 21.875vw;
 
             @media (max-width: 767px) {
