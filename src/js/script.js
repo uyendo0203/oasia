@@ -1,6 +1,16 @@
 function isValidForm(form) {
     isValid = true;
 
+    var REX_IS_NUMBER = new RegExp('^[0-9]*$');
+    var REX_LOWERCASE = new RegExp('(?=.*[a-z])');
+    var REX_UPPERCASE = new RegExp('(?=.*[A-Z])');
+    var REX_NUMBER = new RegExp('(?=.*[0-9])');
+    var REX_SPECIAL = new RegExp('(?=.[!@#\$%\^&])');
+    var REX_INTERGER = new RegExp('^[0-9]*$');
+    var REX_PHONE = new RegExp('^(0|84)[0-9]*$');
+    var REX_EMAIL = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+    var REX_URL = new RegExp(/^(?:(?:https?|ftp):\/\/)(?:\S+(?::\S*)?@)?(?:(?!10(?:\.\d{1,3}){3})(?!127(?:\.​\d{1,3}){3})(?!169\.254(?:\.\d{1,3}){2})(?!192\.168(?:\.\d{1,3}){2})(?!172\.(?:1[​6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1​,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00​a1-\uffff0-9]+-?)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]+-?)*[a-z\u​00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/[^\s]*)?$/i);
+
     form.forEach(function (input) {
         var value = $(input.name).val();
         input.validators.forEach(function (validator) {
@@ -64,16 +74,6 @@ function validateForm($submit, form) {
 }
 $(window).on("load", function () {
 
-    var REX_IS_NUMBER = new RegExp('^[0-9]*$');
-    var REX_LOWERCASE = new RegExp('(?=.*[a-z])');
-    var REX_UPPERCASE = new RegExp('(?=.*[A-Z])');
-    var REX_NUMBER = new RegExp('(?=.*[0-9])');
-    var REX_SPECIAL = new RegExp('(?=.[!@#\$%\^&])');
-    var REX_INTERGER = new RegExp('^[0-9]*$');
-    var REX_PHONE = new RegExp('^(0|84)[0-9]*$');
-    var REX_EMAIL = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
-    var REX_URL = new RegExp(/^(?:(?:https?|ftp):\/\/)(?:\S+(?::\S*)?@)?(?:(?!10(?:\.\d{1,3}){3})(?!127(?:\.​\d{1,3}){3})(?!169\.254(?:\.\d{1,3}){2})(?!192\.168(?:\.\d{1,3}){2})(?!172\.(?:1[​6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1​,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00​a1-\uffff0-9]+-?)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]+-?)*[a-z\u​00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/[^\s]*)?$/i);
-
     new WOW().init();
     $('.loading').removeClass('active')
     Menu()
@@ -82,6 +82,7 @@ $(window).on("load", function () {
 
     Block1ValidateForm()
     Block7ValidateForm()
+    PopupValidateForm()
 
     block4Slider()
     block5Slider()
@@ -153,6 +154,8 @@ $(window).on("load", function () {
 
     $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
         $('.block4__slider-js').slick('resize');
+        $('.block6-slider-1-js').slick('resize');
+        $('.block6-slider-2-js').slick('resize');
     })
 
     $(".block4__slider--wrap .nav.nav-tabs").on("toggled", function (event, tab) {
@@ -227,7 +230,7 @@ let Block1ValidateForm = function () {
         maxLength: 10,
     }, {
         name: '.block1Email',
-        validators: []
+        validators: ['required']
     }, {
         name: '.block1Note',
         validators: []
@@ -247,7 +250,7 @@ let Block7ValidateForm = function () {
         maxLength: 10,
     }, {
         name: '.block7Email',
-        validators: []
+        validators: ['required']
     }, {
         name: '.block7Note',
         validators: []
@@ -262,12 +265,12 @@ let PopupValidateForm = function () {
         validators: ['required']
     }, {
         name: '.PopupPhone',
-        validators: ['required', 'isNumber', 'minLength', 'maxLength'],
+        validators: ['required', 'minLength', 'maxLength'],
         minLength: 10,
         maxLength: 10,
     }, {
         name: '.PopupEmail',
-        validators: []
+        validators: ['required']
     }, {
         name: '.PopupNote',
         validators: []
@@ -313,7 +316,7 @@ let block6Slider = function () {
     }
 
     // init and hide number < 1 
-    $('#block6-slider-1').on('init', function (event, slick) {
+    $('.block6-slider-1-js').on('init', function (event, slick) {
         if (slick.slideCount == 1) {
             $('.block6__slider1--arrow .slick-number').hide()
         } else {
@@ -321,7 +324,7 @@ let block6Slider = function () {
         }
     });
 
-    $('#block6-slider-1').slick({
+    $('.block6-slider-1-js').slick({
         autoplay: true,
         arrow: true,
         dots: false,
@@ -335,7 +338,7 @@ let block6Slider = function () {
 
 
 
-    $('#block6-slider-2').slick({
+    $('.block6-slider-2-js').slick({
         autoplay: true,
         arrow: true,
         dots: true,

@@ -29,7 +29,75 @@
 <div class="message">
     <div class="message__content text-center">
         <div class="message__title">Bạn đã đăng ký tư vấn thành công.</div>
-        <button class="btn-submit" type="button">Đóng</button>
+        <button class="btn-submit button" type="button">Đóng</button>
+    </div>
+</div>
+{# modal đăng kí #}
+<div
+    class="modal fade in popup"
+    id="Popup"
+    tabindex="-1"
+    role="dialog"
+>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <span class="close" data-dismiss="modal" aria-label="Close"> x</span>
+                <div class="popup__content">
+                    <div class="popup__wrap left">
+                        <!-- <img class="logo_head_modal" src="./assets/images/logo_head.png" alt="ĐĂNG KÝ TẠI ĐÂY ĐỂ NHẬN TƯ VẤN VÀ BÁO GIÁ">
+                        <img src="./assets/images/popup_form_img.jpg" alt="ĐĂNG KÝ TẠI ĐÂY ĐỂ NHẬN TƯ VẤN VÀ BÁO GIÁ"> --></div>
+                    <div class="popup__wrap right">
+                        <div class="popup__title">
+                            ĐĂNG KÝ TẠI ĐÂY
+                            <br>
+                            ĐỂ NHẬN TƯ VẤN VÀ BÁO GIÁ
+                        </div>
+                        <form method="POST">
+                            <div class="popup__form form">
+                                <div class="form-group">
+                                    <input
+                                        class="form-control PopupName"
+                                        name="name"
+                                        type="text"
+                                        placeholder="Họ và tên"
+                                    >
+                                </div>
+                                <div class="form-group">
+                                    <input
+                                        class="form-control PopupPhone"
+                                        name="phone"
+                                        type="number"
+                                        placeholder="Số điện thoại"
+                                    >
+                                </div>
+                                <div class="form-group">
+                                    <input
+                                        class="form-control PopupEmail"
+                                        name="email"
+                                        type="text"
+                                        placeholder="Email"
+                                    >
+                                </div>
+                                <div class="form-group">
+                                    <input
+                                        class="form-control PopupNote"
+                                        name="note"
+                                        type="text"
+                                        placeholder="Ghi chú nhu cầu"
+                                    >
+                                </div>
+                                <div class="popup__button text-center mt-4">
+                                    <button class="form__submit button" type="submit" disabled="disabled">
+                                        Đăng ký
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 {# trangchu #}
@@ -141,7 +209,12 @@
             <div class="des">
                 Mỗi sáng thức giấc tại dự án The Oasia thuộc khu đô thị SwanBay sẽ là khởi đầu cho ngày đáng sống với vô vàn trải nghiệm có một không hai từ cảnh quan sông nước nhẹ nhàng, không khí trong lành, tinh khiết đến nghệ thuật kiến trúc hài hòa giữa sang trọng, tinh xảo cùng thanh khiết, giàu sự uốn lượn, linh hoạt.
             </div>
-            <button class="form__submit button">
+            <button
+                type="button"
+                data-toggle="modal"
+                data-target="#Popup"
+                class="form__submit button"
+            >
                 Đăng ký
             </button>
         </div>
@@ -383,13 +456,13 @@
                 >Miyabi</a>
             </li>
         </ul>
-        <div class="tab-content">
+        <div class="tab-content wow fadeInleft" data-wow-delay=".1s">
             <div class="tab-pane fade show active" id="block4_tab1">
                 <div class="block4__item">
-                    <figure class="block4__left wow fadeInleft" data-wow-delay=".1s">
+                    <figure class="block4__left">
                         <img src="./assets/images/v4-block4-map.png" alt="nghe thuat thiet ke hai hoa va tinh xao">
                     </figure>
-                    <div class="block4__right wow fadeInRight" data-wow-delay=".2s">
+                    <div class="block4__right">
                         <figure class="block4__logo">
                             <img src="./assets/images/block4-icon-logo.png" alt="nghe thuat thiet ke hai hoa va tinh xao">
                         </figure>
@@ -421,10 +494,10 @@
             </div>
             <div class="tab-pane fade show" id="block4_tab2">
                 <div class="block4__item">
-                    <figure class="block4__left wow fadeInleft" data-wow-delay=".1s">
+                    <figure class="block4__left">
                         <img src="./assets/images/v4-block4-map.png" alt="nghe thuat thiet ke hai hoa va tinh xao">
                     </figure>
-                    <div class="block4__right wow fadeInRight" data-wow-delay=".2s">
+                    <div class="block4__right">
                         <figure class="block4__logo">
                             <img src="./assets/images/block4-icon-logo.png" alt="nghe thuat thiet ke hai hoa va tinh xao">
                         </figure>
@@ -456,10 +529,10 @@
             </div>
             <div class="tab-pane fade show" id="block4_tab3">
                 <div class="block4__item">
-                    <figure class="block4__left wow fadeInleft" data-wow-delay=".1s">
+                    <figure class="block4__left">
                         <img src="./assets/images/v4-block4-map.png" alt="nghe thuat thiet ke hai hoa va tinh xao">
                     </figure>
-                    <div class="block4__right wow fadeInRight" data-wow-delay=".2s">
+                    <div class="block4__right">
                         <figure class="block4__logo">
                             <img src="./assets/images/block4-icon-logo.png" alt="nghe thuat thiet ke hai hoa va tinh xao">
                         </figure>
@@ -491,10 +564,10 @@
             </div>
             <div class="tab-pane fade show" id="block4_tab4">
                 <div class="block4__item">
-                    <figure class="block4__left wow fadeInleft" data-wow-delay=".1s">
+                    <figure class="block4__left">
                         <img src="./assets/images/v4-block4-map.png" alt="nghe thuat thiet ke hai hoa va tinh xao">
                     </figure>
-                    <div class="block4__right wow fadeInRight" data-wow-delay=".2s">
+                    <div class="block4__right">
                         <figure class="block4__logo">
                             <img src="./assets/images/block4-icon-logo.png" alt="nghe thuat thiet ke hai hoa va tinh xao">
                         </figure>
@@ -588,9 +661,9 @@
                 >Shop House</a>
             </li>
         </ul>
-        <div class="tab-content">
+        <div class="tab-content wow fadeIn" data-wow-delay=".3s">
             <div class="tab-pane fade show active" id="tab1">
-                <div class="block6__center wow fadeIn" data-wow-delay=".3s">
+                <div class="block6__center ">
                     <div class="block6__left">
                         <div class="block6__summary">
                             <h2 class="block6__title">Diện tích mặt sàn 338.5m2</h2>
@@ -602,7 +675,7 @@
                         </div>
                         <div class="block6__slider1">
                             <div class="block6__slider1--title">Shop Villa</div>
-                            <div id="block6-slider-1" class="block6__slider1--content">
+                            <div id="block6-slider-1" class="block6-slider-1-js block6__slider1--content">
                                 <a class="block6__slider1--item" data-fancybox="block6-slider-1" href="./assets/images/block6-image-active.jpg">
                                     <img class="image" src="./assets/images/block6-image-active.jpg" alt="Phòng Gym">
                                 </a>
@@ -625,7 +698,7 @@
                         </div>
                     </div>
                     <div class="block6__right">
-                        <div id="block6-slider-2" class="block6__slider2">
+                        <div class="block6-slider-2-js block6__slider2">
                             <div class="block6__slider2--item">
                                 <a class="img" data-fancybox="block6-slider-2" href="./assets/images/block6-slider-1.png">
                                     <img class="image" src="./assets/images/block6-slider-1.png" alt="Phòng Gym">
@@ -648,9 +721,183 @@
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade" id="tab2">tab2</div>
-            <div class="tab-pane fade" id="tab3">tab3</div>
-            <div class="tab-pane fade" id="tab4">tab4</div>
+            <div class="tab-pane fade" id="tab2">
+                <div class="block6__center">
+                    <div class="block6__left">
+                        <div class="block6__summary">
+                            <h2 class="block6__title">Diện tích mặt sàn 338.5m2</h2>
+                            <p class="block6__des">
+                                03 tầng, 01 tầng lửng với 04 phòng ngủ & 05 phòng tắm.
+                                <br>
+                                Thiết kế 2 mặt tiền trước sau cân đối giữa diện tích giành cho kinh doanh và không gian sinh hoạt riêng tư của gia chủ.
+                            </p>
+                        </div>
+                        <div class="block6__slider1">
+                            <div class="block6__slider1--title">Garden Villa A</div>
+                            <div class="block6-slider-1-js block6__slider1--content">
+                                <a class="block6__slider1--item" data-fancybox="block6-slider-1" href="./assets/images/block6-image-active.jpg">
+                                    <img class="image" src="./assets/images/block6-image-active.jpg" alt="Phòng Gym">
+                                </a>
+                                <a class="block6__slider1--item" data-fancybox="block6-slider-1" href="./assets/images/block6-image-active.jpg">
+                                    <img class="image" src="./assets/images/block6-image-active.jpg" alt="Phòng Gym">
+                                </a>
+                                <a class="block6__slider1--item" data-fancybox="block6-slider-1" href="./assets/images/block6-image-active.jpg">
+                                    <img class="image" src="./assets/images/block6-image-active.jpg" alt="Phòng Gym">
+                                </a>
+                            </div>
+                            <div class="block6__slider1--arrow">
+                                <button type="button" class="slick-arrow slick-prev">
+                                    <img src="./assets/images/block6-arrow-single-left.png" alt="">
+                                </button>
+                                <div class="slick-number">01</div>
+                                <button type="button" class="slick-arrow slick-next">
+                                    <img src="./assets/images/block6-arrow-single-right.png" alt="">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block6__right">
+                        <div class="block6-slider-2-js block6__slider2">
+                            <div class="block6__slider2--item">
+                                <a class="img" data-fancybox="block6-slider-2" href="./assets/images/block6-slider-1.png">
+                                    <img class="image" src="./assets/images/block6-slider-1.png" alt="Phòng Gym">
+                                </a>
+                                <div class="text">Ảnh layout tầng 1</div>
+                            </div>
+                            <div class="block6__slider2--item">
+                                <a class="img" data-fancybox="block6-slider-2" href="./assets/images/block6-slider-1.png">
+                                    <img class="image" src="./assets/images/block6-slider-1.png" alt="Phòng Gym">
+                                </a>
+                                <div class="text">Ảnh layout tầng 2</div>
+                            </div>
+                            <div class="block6__slider2--item">
+                                <a class="img" data-fancybox="block6-slider-2" href="./assets/images/block6-slider-1.png">
+                                    <img class="image" src="./assets/images/block6-slider-1.png" alt="Phòng Gym">
+                                </a>
+                                <div class="text">Ảnh layout tầng 3</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="tab3">
+                <div class="block6__center">
+                    <div class="block6__left">
+                        <div class="block6__summary">
+                            <h2 class="block6__title">Diện tích mặt sàn 325.5m2 - 348.2m2</h2>
+                            <p class="block6__des">
+                                03 tầng với 04 phòng ngủ & 05 phòng tắm
+                                <br>
+                                Không gian xanh phía trước cùng diện tích mặt tiền lớn giúp tối đa hóa không gian có tầm nhìn ra sân vườn, hồ bơi.
+                            </p>
+                        </div>
+                        <div class="block6__slider1">
+                            <div class="block6__slider1--title">Garden Villa B</div>
+                            <div class="block6-slider-1-js block6__slider1--content">
+                                <a class="block6__slider1--item" data-fancybox="block6-slider-1" href="./assets/images/block6-image-active.jpg">
+                                    <img class="image" src="./assets/images/block6-image-active.jpg" alt="Phòng Gym">
+                                </a>
+                                <a class="block6__slider1--item" data-fancybox="block6-slider-1" href="./assets/images/block6-image-active.jpg">
+                                    <img class="image" src="./assets/images/block6-image-active.jpg" alt="Phòng Gym">
+                                </a>
+                                <a class="block6__slider1--item" data-fancybox="block6-slider-1" href="./assets/images/block6-image-active.jpg">
+                                    <img class="image" src="./assets/images/block6-image-active.jpg" alt="Phòng Gym">
+                                </a>
+                            </div>
+                            <div class="block6__slider1--arrow">
+                                <button type="button" class="slick-arrow slick-prev">
+                                    <img src="./assets/images/block6-arrow-single-left.png" alt="">
+                                </button>
+                                <div class="slick-number">01</div>
+                                <button type="button" class="slick-arrow slick-next">
+                                    <img src="./assets/images/block6-arrow-single-right.png" alt="">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block6__right">
+                        <div class="block6-slider-2-js block6__slider2">
+                            <div class="block6__slider2--item">
+                                <a class="img" data-fancybox="block6-slider-2" href="./assets/images/block6-slider-1.png">
+                                    <img class="image" src="./assets/images/block6-slider-1.png" alt="Phòng Gym">
+                                </a>
+                                <div class="text">Ảnh layout tầng 1</div>
+                            </div>
+                            <div class="block6__slider2--item">
+                                <a class="img" data-fancybox="block6-slider-2" href="./assets/images/block6-slider-1.png">
+                                    <img class="image" src="./assets/images/block6-slider-1.png" alt="Phòng Gym">
+                                </a>
+                                <div class="text">Ảnh layout tầng 2</div>
+                            </div>
+                            <div class="block6__slider2--item">
+                                <a class="img" data-fancybox="block6-slider-2" href="./assets/images/block6-slider-1.png">
+                                    <img class="image" src="./assets/images/block6-slider-1.png" alt="Phòng Gym">
+                                </a>
+                                <div class="text">Ảnh layout tầng 3</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="tab4">
+                <div class="block6__center">
+                    <div class="block6__left">
+                        <div class="block6__summary">
+                            <h2 class="block6__title">Diện tích mặt sàn 364.4m2</h2>
+                            <p class="block6__des">
+                                05 tầng lầu với 04 phòng ngủ & 05 phòng tắm
+                                <br>
+                                Có mặt tiền nhìn ra trục trung tâm của toàn bộ The Oasia và lối đi nội bộ ở mặt sau, Shop House là lựa chọn đáp ứng hoàn hảo nhu cầu kinh doanh của gia chủ.
+                            </p>
+                        </div>
+                        <div class="block6__slider1">
+                            <div class="block6__slider1--title">Shop House</div>
+                            <div class="block6-slider-1-js block6__slider1--content">
+                                <a class="block6__slider1--item" data-fancybox="block6-slider-1" href="./assets/images/block6-image-active.jpg">
+                                    <img class="image" src="./assets/images/block6-image-active.jpg" alt="Phòng Gym">
+                                </a>
+                                <a class="block6__slider1--item" data-fancybox="block6-slider-1" href="./assets/images/block6-image-active.jpg">
+                                    <img class="image" src="./assets/images/block6-image-active.jpg" alt="Phòng Gym">
+                                </a>
+                                <a class="block6__slider1--item" data-fancybox="block6-slider-1" href="./assets/images/block6-image-active.jpg">
+                                    <img class="image" src="./assets/images/block6-image-active.jpg" alt="Phòng Gym">
+                                </a>
+                            </div>
+                            <div class="block6__slider1--arrow">
+                                <button type="button" class="slick-arrow slick-prev">
+                                    <img src="./assets/images/block6-arrow-single-left.png" alt="">
+                                </button>
+                                <div class="slick-number">01</div>
+                                <button type="button" class="slick-arrow slick-next">
+                                    <img src="./assets/images/block6-arrow-single-right.png" alt="">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block6__right">
+                        <div class="block6-slider-2-js block6__slider2">
+                            <div class="block6__slider2--item">
+                                <a class="img" data-fancybox="block6-slider-2" href="./assets/images/block6-slider-1.png">
+                                    <img class="image" src="./assets/images/block6-slider-1.png" alt="Phòng Gym">
+                                </a>
+                                <div class="text">Ảnh layout tầng 1</div>
+                            </div>
+                            <div class="block6__slider2--item">
+                                <a class="img" data-fancybox="block6-slider-2" href="./assets/images/block6-slider-1.png">
+                                    <img class="image" src="./assets/images/block6-slider-1.png" alt="Phòng Gym">
+                                </a>
+                                <div class="text">Ảnh layout tầng 2</div>
+                            </div>
+                            <div class="block6__slider2--item">
+                                <a class="img" data-fancybox="block6-slider-2" href="./assets/images/block6-slider-1.png">
+                                    <img class="image" src="./assets/images/block6-slider-1.png" alt="Phòng Gym">
+                                </a>
+                                <div class="text">Ảnh layout tầng 3</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
