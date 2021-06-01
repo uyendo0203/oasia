@@ -479,10 +479,17 @@ button {
         margin-top: 1vw;
         border: none;
         background-color: transparent;
-        font-size: 14px;
+        font-size: 30px;
+        margin-bottom: 20px;
+        font-size: 1.563vw;
+        margin-bottom: 1.042vw;
         border: none;
         background-color: transparent;
         background-image: url(../assets/images/v6-button-hover.png);
+        @media (max-width: 767px) {
+            font-size: 1vw;
+            margin-bottom: 10px;
+        }
     }
 }
 
@@ -596,7 +603,6 @@ button {
 
             @media (max-width: 767px) {
                 @include mb_fs14;
-                padding-left: 15px;
             }
         }
 
@@ -686,7 +692,8 @@ input[type="number"] {
 .popup {
     &__content {
         @include flexbox;
-
+        position: relative;
+        z-index: 1;
         @media (max-width: 767px) {
             @include flex-direction(column);
         }
@@ -694,7 +701,7 @@ input[type="number"] {
 
     &__wrap {
         &.left {
-            width: 51.376%;
+            width: 50%;
             position: relative;
 
             @media (max-width: 767px) {
@@ -707,12 +714,15 @@ input[type="number"] {
             // background-image: url("../assets/images/popup_form_bg.jpg");
             background-repeat: no-repeat;
             background-size: 100% 100%;
-            padding: 1.823vw;
-            @include flex_center;
+            padding-left: 3.385vw;
+            padding-top: 5.208vw;
+            @include flexbox;
             @include flex-direction(column);
 
             @media (max-width: 767px) {
                 padding: 4.823vw;
+                padding-top: 8vw;
+                padding-bottom: 100px;
             }
         }
     }
@@ -722,11 +732,11 @@ input[type="number"] {
         line-height: 1.3;
         margin-bottom: 1.342vw;
         font-size: 1.3vw;
-        color: #000;
+        color: #5e2900;
+        @include Montserrat-Bold;
 
         @media (max-width: 767px) {
             font-size: 4vw;
-            margin-top: 7vw;
             margin-bottom: 3vw;
         }
     }
@@ -738,7 +748,7 @@ input[type="number"] {
         width: 100%;
     }
     .modal-dialog {
-        width: 65.885vw;
+        width: 66.667vw;
         max-width: 100%;
         height: 96%;
         margin-top: 0;
@@ -753,15 +763,41 @@ input[type="number"] {
 
     .modal-content {
         border: 0;
-        border-radius: 0;
-        background-color: #f1e1ca;
+        border-radius: 20px;
+        border-radius: 1.042vw;
+        background-color: #e6d5c5;
     }
 
     .modal-body {
-        padding: 0;
+        padding: 35px 85px 0 40px;
+        padding: 1.823vw 4.427vw 0 2.083vw;
+        position: relative;
+        @media (max-width: 767px) {
+            padding: 0;
+        }
+        &::before {
+            position: absolute;
+            content: "";
+            width: 630px;
+            height: 280px;
+            width: 32.813vw;
+            height: 14.583vw;
+            right: 0;
+            bottom: 0;
+            background-image: url(../assets/images/popup_bg.png);
+            background-size: 100% 100%;
+            background-position: center center;
+            background-repeat: no-repeat;
+
+            @media (max-width: 767px) {
+                width: 90%;
+                height: 20%;
+            }
+        }
     }
     .form__submit {
         background-image: url(../assets/images/v6-button-hover.png);
+        color: #111d2a;
     }
     .form-group {
         margin-bottom: 0.781vw;
@@ -773,10 +809,15 @@ input[type="number"] {
 
     .form-control {
         width: 100%;
-        background: #ffffff73;
+        background: #f0e6dc;
         outline: none;
         border: none;
-        color: #4e5055 !important;
+        border-radius: 0.26vw;
+        height: 3.125vw;
+        color: #5f2a00 !important;
+        @media (max-width: 767px) {
+            height: 50px;
+        }
     }
 
     .close {
@@ -784,10 +825,13 @@ input[type="number"] {
         position: absolute;
         font-size: 2.667vw;
         line-height: normal;
-        right: 1.042vw;
+        right: 45px;
+        right: 2.344vw;
         top: 1.042vw;
         color: #ffff;
         cursor: pointer;
+        z-index: 2;
+        @include Montserrat-Medium;
 
         &:hover {
             @include transform(scale(1.1));

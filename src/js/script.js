@@ -240,7 +240,7 @@ let Block1ValidateForm = function () {
         maxLength: 10,
     }, {
         name: '.block1Email',
-        validators: ['required']
+        validators: ['required', 'email']
     }, {
         name: '.block1Note',
         validators: []
@@ -260,7 +260,7 @@ let Block7ValidateForm = function () {
         maxLength: 10,
     }, {
         name: '.block7Email',
-        validators: ['required']
+        validators: ['required', 'email']
     }, {
         name: '.block7Note',
         validators: []
@@ -280,7 +280,7 @@ let PopupValidateForm = function () {
         maxLength: 10,
     }, {
         name: '.PopupEmail',
-        validators: ['required']
+        validators: ['required', 'email']
     }, {
         name: '.PopupNote',
         validators: []
