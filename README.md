@@ -8,4 +8,3 @@
 
 -git: https://github.com/TungUyenDo/oasia
 
--font generate: https://everythingfonts.com/font-face
