@@ -154,8 +154,6 @@ $(window).on("load", function () {
 
     $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
         $('.block4__slider-js').slick('resize');
-        $('.block6-slider-1-js').slick('resize');
-        $('.block6-slider-2-js').slick('resize');
     })
 
     $(".block4__slider--wrap .nav.nav-tabs").on("toggled", function (event, tab) {
@@ -290,7 +288,7 @@ let PopupValidateForm = function () {
 }
 
 let block4Slider = function () {
-    $('.block4__slider-js').slick({
+    $('.block4__slider-js').not('.slick-initialized').slick({
         autoplay: true,
         arrow: true,
         dots: false,
@@ -302,7 +300,7 @@ let block4Slider = function () {
     });
 }
 let block5Slider = function () {
-    $('#block5__slider').slick({
+    $('#block5__slider').not('.slick-initialized').slick({
         autoplay: true,
         arrow: true,
         dots: false,
@@ -316,51 +314,72 @@ let block5Slider = function () {
 }
 let block6Slider = function () {
 
-    let numberActive = function (currentSlide) {
+
+    let sliderBlock6 = function (classSlide1, classSlide2, classArrow1) {
+
+        // init and hide number < 1 
+        $(classSlide1).on('init', function (event, slick) {
+            if (slick.slideCount == 1) {
+                $(classArrow1).hide()
+            } else {
+                $(classArrow1).show()
+            }
+        });
+
+        $(classSlide1).not('.slick-initialized').slick({
+            autoplay: true,
+            arrow: true,
+            dots: false,
+            infinite: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            prevArrow: '' + classArrow1 + ' .slick-prev',
+            nextArrow: '' + classArrow1 + '.slick-next',
+        }).on('afterChange', function (event, slick) {
+            numberActive(slick.currentSlide, classArrow1)
+        });
+
+        $(classSlide2).not('.slick-initialized').slick({
+            autoplay: false,
+            arrow: true,
+            dots: true,
+            fade: true,
+            infinite: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            nextArrow: '<button type="button" class="slick-arrow slick-next">Next</button>',
+        });
+    }
+
+    let numberActive = function (currentSlide, classArrow) {
         let number = 0;
         if (currentSlide < 9) {
             number = '0' + (currentSlide + 1)
         } else {
             number = currentSlide + 1
         }
-        $('.block6__slider1--arrow .slick-number').html(number)
+        $('' + classArrow + ' .slick-number').html(number)
     }
 
-    // init and hide number < 1 
-    $('.block6-slider-1-js').on('init', function (event, slick) {
-        if (slick.slideCount == 1) {
-            $('.block6__slider1--arrow .slick-number').hide()
-        } else {
-            $('.block6__slider1--arrow .slick-number').show()
+    // set current tab first 
+    $('.block6 .nav-tabs .nav-item').each(function () {
+        let tab_current = $(this).find('.nav-link.active').attr('href')
+        if (tab_current) {
+            sliderBlock6('' + tab_current + ' .block6-slider-1-js', '' + tab_current + ' .block6-slider-2-js', '' + tab_current + ' .block6__slider1--arrow')
         }
-    });
+    })
 
-    $('.block6-slider-1-js').slick({
-        autoplay: true,
-        arrow: true,
-        dots: false,
-        infinite: false,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        prevArrow: '.block6__slider1--arrow .slick-prev',
-        nextArrow: '.block6__slider1--arrow .slick-next',
-    }).on('afterChange', function (event, slick) {
-        numberActive(slick.currentSlide)
-    });
+    // set current when click tab 
+    $('.block6 a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+        let tab_current = $(this).attr('href')
+        if (tab_current) {
+            sliderBlock6('' + tab_current + ' .block6-slider-1-js', '' + tab_current + ' .block6-slider-2-js', '' + tab_current + ' .block6__slider1--arrow')
+        }
+    })
 
-    $('.block6-slider-2-js').slick({
-        autoplay: true,
-        arrow: true,
-        dots: true,
-        fade: true,
-        infinite: false,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        nextArrow: '<button type="button" class="slick-arrow slick-next">Next</button>',
-    });
 }
 let block7Slider = function () {
-    $('#block7__slider--for').slick({
+    $('#block7__slider--for').not('.slick-initialized').slick({
         autoplay: true,
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -368,7 +387,7 @@ let block7Slider = function () {
         fade: true,
         asNavFor: '#block7__slider--nav'
     });
-    $('#block7__slider--nav').slick({
+    $('#block7__slider--nav').not('.slick-initialized').slick({
         slidesToShow: 3,
         slidesToScroll: 1,
         asNavFor: '#block7__slider--for',

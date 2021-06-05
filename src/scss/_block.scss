@@ -1546,10 +1546,15 @@
 }
 
 // slider loader
-
 #block4__slider,
-#block6-slider-1,
-#block6-slider-2,
+#tab1 .block6-slider-1-js,
+#tab1 .block6-slider-2-js,
+#tab2 .block6-slider-1-js,
+#tab2 .block6-slider-2-js,
+#tab3 .block6-slider-1-js,
+#tab3 .block6-slider-2-js,
+#tab4 .block6-slider-1-js,
+#tab4 .block6-slider-2-js,
 #block7__slider--for,
 #block7__slider--nav {
     @include your_slider_wrapper;
