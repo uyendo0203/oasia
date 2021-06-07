@@ -26,12 +26,12 @@
 
         @media (max-width: 767px) {
             position: static;
-            width: 92%;
+            width: 100%;
             margin-left: auto;
             margin-right: auto;
             text-align: center;
-            margin-bottom: 55px;
-            margin-top: 140px;
+            margin-bottom: 8vw;
+            margin-top: 115px;
         }
     }
     &__right--logo {
@@ -42,9 +42,9 @@
         width: 18.229vw;
         margin-bottom: 1.302vw;
         @media (max-width: 767px) {
-            width: 100%;
-            max-width: 200px;
-            margin-bottom: 20px;
+            width: 32vw;
+            min-width: 200px;
+            margin-bottom: 0;
         }
     }
     &__right--text {
@@ -55,7 +55,11 @@
         color: #4a4138;
         text-transform: uppercase;
         @media (max-width: 767px) {
-            font-size: 6vw;
+            font-size: 7.1vw;
+            width: 100%;
+            margin: 0 auto;
+            margin-top: 8vw;
+            max-width: 94%;
         }
         span {
             display: block;
@@ -73,6 +77,10 @@
         .number {
             font-size: 145px;
             font-size: 7.552vw;
+            @media (max-width: 767px) {
+                font-size: 18vw;
+                line-height: 0.4;
+            }
         }
     }
     .form {
@@ -152,7 +160,7 @@
     position: relative;
 
     @media (max-width: 767px) {
-        padding: 0 0 80px 0;
+        padding: 0 0 110px 0;
         height: auto;
         background-size: 100% 100%;
         background-position: center center;
@@ -223,8 +231,9 @@
         margin-right: 3.646vw;
         width: 14.323vw;
         @media (max-width: 767px) {
-            max-width: 200px;
+            max-width: 155px;
             width: 100%;
+            margin: 0;
         }
     }
     &__heading--content {
@@ -240,6 +249,10 @@
         color: #5d5a59;
         text-transform: uppercase;
         line-height: normal;
+        @media (max-width: 767px) {
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
         span {
             display: block;
         }
@@ -251,7 +264,7 @@
             @include Cormorant-Medium;
             @media (max-width: 767px) {
                 font-size: 30px;
-                margin-top: 20px;
+                margin-bottom: 2px;
             }
         }
         .bottom {
@@ -273,6 +286,7 @@
         @include Montserrat-Medium;
         @media (max-width: 767px) {
             font-size: 16px;
+            line-height: 1.4;
         }
     }
     &__icon30 {
@@ -314,7 +328,10 @@
             font-size: 1.875vw;
             line-height: 1.1;
             @media (max-width: 767px) {
-                font-size: 35px;
+                font-size: 32px;
+                line-height: 0.9;
+                margin-top: 3px;
+                margin-bottom: 7px;
             }
         }
     }
@@ -339,6 +356,7 @@
             color: #4c4a4b;
             @media (max-width: 767px) {
                 font-size: 16px;
+                line-height: 1.4;
             }
         }
         .button {
@@ -811,14 +829,14 @@
             left: -35px;
             left: -1.823vw;
             @media (max-width: 767px) {
-                left: -35px;
+                left: -28px;
             }
         }
         .slick-next {
             right: -35px;
             right: -1.823vw;
             @media (max-width: 767px) {
-                right: -35px;
+                right: -28px;
             }
         }
         .slick-arrow {
@@ -838,9 +856,6 @@
     }
     &__left {
         flex: 1;
-        @media (max-width: 767px) {
-            order: 2;
-        }
     }
     &__right {
         // width: 515px;
@@ -850,6 +865,7 @@
         @media (max-width: 767px) {
             width: 80%;
             margin: 0 auto;
+            order: 2;
         }
     }
     &__logo {
@@ -858,8 +874,9 @@
         margin-bottom: 0.938vw;
         margin-top: 4.167vw;
         @media (max-width: 767px) {
-            max-width: 250px;
+            max-width: 215px;
             margin: 20px auto;
+            margin-left: 0;
         }
     }
     &__title {
@@ -924,17 +941,24 @@
     &__slider--arrow {
         position: absolute;
         width: 100%;
-        height: 50px;
+        height: 2.604vw;
         top: 50%;
         transform: translateY(-50%);
         z-index: 1;
+        @media (max-width: 767px) {
+            height: 35px;
+        }
     }
     .slick-arrow {
-        width: 50px;
-        height: 50px;
+        width: 2.604vw;
+        height: 2.604vw;
         background: #ffffff75;
         background-color: #e7c46f87;
         border-radius: 50%;
+        @media (max-width: 767px) {
+            width: 35px;
+            height: 35px;
+        }
     }
     .slick-disabled {
         background-color: transparent;
