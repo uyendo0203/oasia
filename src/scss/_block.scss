@@ -515,6 +515,7 @@
         // margin-bottom: 40px;
         width: 48.958vw;
         bottom: 0;
+        z-index: 1;
         @include transform(translateX(-50%));
 
         @media (max-width: 767px) {
@@ -536,7 +537,7 @@
             h2 {
                 @include Montserrat-Bold;
                 text-transform: uppercase;
-                font-size: 1.458vw;
+                font-size: 1.3vw;
                 line-height: normal;
                 @media (max-width: 767px) {
                     font-size: 20px;
@@ -545,6 +546,7 @@
             p {
                 font-size: 18px;
                 font-size: 0.938vw;
+                margin-bottom: 5px;
                 @media (max-width: 767px) {
                     font-size: 16px;
                 }
@@ -565,7 +567,7 @@
 .swiper-container {
     display: flex;
     align-items: center;
-    height: 90%;
+    height: 100%;
     // padding-left: 30px;
     // padding-right: 30px;
     padding-left: 1.563vw;
@@ -585,7 +587,7 @@
         transition: all 0.3s ease-in-out;
         z-index: 99;
         outline: none;
-        top: 34%;
+        top: 29%;
         // width: 67px;
         // height: 67px;
         // line-height: 67px;
@@ -697,14 +699,14 @@
     .swiper-slide-prev {
     }
     .swiper-slide-active {
-        @include transform(scale(1.4) translateX(0));
+        @include transform(scale(1.35) translate(0, 0.521vw));
         // padding-top: 75px;
         padding-top: 3.906vw;
         opacity: 1;
         z-index: 100;
         padding-left: 0;
         @media (max-width: 767px) {
-            @include transform(scale(1) translateX(0));
+            @include transform(scale(1) translate(0));
         }
         .img-center {
             opacity: 1;
